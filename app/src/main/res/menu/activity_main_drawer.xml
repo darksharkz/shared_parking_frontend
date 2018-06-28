@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_contracts"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Contracts" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Search for parking" />
+        <item
+            android:id="@+id/nav_offers"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="My Offers" />
+        <item
+            android:id="@+id/nav_spots"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="My Parking Spots" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/nav_report"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Report rule violation" />
+    </group>
+
+</menu>

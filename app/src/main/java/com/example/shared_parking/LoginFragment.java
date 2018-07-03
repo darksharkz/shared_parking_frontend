@@ -2,39 +2,47 @@ package com.example.shared_parking;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-public class TestFragment extends Fragment implements View.OnClickListener{
-    Button button;
-    TextView textView;
+public class LoginFragment extends Fragment implements View.OnClickListener{
+    private EditText Mail;
+    private EditText Password;
+    private Button Button;
+    private TextView TextView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        View view = inflater.inflate(R.layout.fragment_test, container, false);
-        textView = view.findViewById(R.id.fragment_test_textview);
-        button = view.findViewById(R.id.button2);
-        button.setOnClickListener(this);
+        Mail = (EditText) view.findViewById(R.id.etLoginMail);
+        Password = (EditText) view.findViewById(R.id.etLoginPassword);
+        Button = (Button) view.findViewById(R.id.btnLogin);
+        TextView = (TextView) view.findViewById(R.id.tvLogin);
 
-        //User user = new User(0,"Simon", "Englert");
-        //MainActivity.appDatabase.userDao().insertUser(user);
+        Button.setOnClickListener(this);
+        TextView.setOnClickListener(this);
 
-        // Inflate the layout for this fragment
         return view;
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.button2:
-                User user = MainActivity.appDatabase.userDao().getUser(1);
-                textView.setText(user.getFirstName());
+            case R.id.btnLogin:
+                break;
+            case R.id.tvLogin:
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.main_coordinator, new SignUpFragment()).addToBackStack(null);
+                ft.commit();
+                break;
         }
 
     }

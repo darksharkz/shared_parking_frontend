@@ -1,9 +1,23 @@
 <resources>
     <string name="app_name">shared-parking</string>
+    <string name="activity_text_overview">Overview</string>
+    <string name="activity_text_contracts">Contracts</string>
+    <string name="activity_text_offers">My Offers</string>
+    <string name="activity_text_profile">My Profile</string>
+    <string name="activity_text_report">Report a violation</string>
+    <string name="activity_text_search">Search for Parking</string>
+    <string name="activity_text_spots">My Parking Spots</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Simon Englert</string>
+    <string name="nav_header_subtitle">simon.englert@stud-mail.uni-wuerzburg.de</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="action_example">Example action</string>
 </resources>

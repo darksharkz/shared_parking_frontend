@@ -10,33 +10,43 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name=".BaseActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Pasha"
+            android:parentActivityName=".BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ContractsActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".OffersActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".ProfileActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".ReportActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".SearchActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".SpotsActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
+        <activity
+            android:name=".ContractsActivity"
+            android:label="@string/activity_text_contracts"
+            android:parentActivityName=".BaseActivity"></activity>
+        <activity
+            android:name=".OffersActivity"
+            android:label="@string/activity_text_offers"
+            android:parentActivityName=".BaseActivity"></activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/activity_text_profile"
+            android:parentActivityName=".BaseActivity"></activity>
+        <activity
+            android:name=".ReportActivity"
+            android:label="@string/activity_text_report"
+            android:parentActivityName=".BaseActivity"></activity>
+        <activity
+            android:name=".SearchActivity"
+            android:label="@string/activity_text_search"
+            android:parentActivityName=".BaseActivity"></activity>
+        <activity
+            android:name=".SpotsActivity"
+            android:label="@string/activity_text_spots"
+            android:parentActivityName=".BaseActivity"></activity>
     </application>
 
 </manifest>

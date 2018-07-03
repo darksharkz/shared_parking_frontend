@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnLogin"
         android:layout_width="122dp"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
@@ -21,11 +21,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginPassword"
         app:layout_constraintVertical_bias="0.109" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/etLoginMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="0.184" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/etLoginPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="260dp"
@@ -61,21 +61,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginMail"
         app:layout_constraintVertical_bias="0.173" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:text="Not registered yet? Click here to sign up!"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        app:layout_constraintVertical_bias="0.035" />
 
 </android.support.constraint.ConstraintLayout>

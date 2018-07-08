@@ -11,10 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class SignUpFragment extends Fragment implements View.OnClickListener{
-        private EditText Mail;
-        private EditText FirstName;
-        private EditText LastName;
-        private EditText Password;
+        private EditText Mail, FirstName, LastName, Password;
         private Button Button;
         private TextView TextView;
 

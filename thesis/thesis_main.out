@@ -1,2 +1,20 @@
 \BOOKMARK [1][-]{section.1}{Abstract}{}% 1
 \BOOKMARK [1][-]{section.2}{Indrodution}{}% 2
+\BOOKMARK [1][-]{section.3}{Related Work}{}% 3
+\BOOKMARK [1][-]{section.4}{Fundamental conceptual points}{}% 4
+\BOOKMARK [1][-]{section.5}{Requirement Analysis}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{Requirement Analysis regarding Basic Features}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{Requirement Analysis regarding Security Aspects}{section.5}% 7
+\BOOKMARK [1][-]{section.6}{Design}{}% 8
+\BOOKMARK [2][-]{subsection.6.1}{Basic features}{section.6}% 9
+\BOOKMARK [2][-]{subsection.6.2}{Fraud Prevention}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.3}{Fraud Detection}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.4}{Fraud Punishment}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.5}{Fraud Compensation}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.6}{Flow of the Money}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.7}{Example}{section.6}% 15
+\BOOKMARK [1][-]{section.7}{Security Analysis}{}% 16
+\BOOKMARK [1][-]{section.8}{Implementation}{}% 17
+\BOOKMARK [1][-]{section.9}{Future Work}{}% 18
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 19
+\BOOKMARK [1][-]{section.11}{Acknowledgments}{}% 20

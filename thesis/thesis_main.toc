@@ -1,2 +1,28 @@
-\contentsline {section}{\numberline {1}Abstract}{2}{section.1}
-\contentsline {section}{\numberline {2}Indrodution}{2}{section.2}
+\contentsline {section}{\numberline {1}Abstract}{3}{section.1}
+\contentsline {section}{\numberline {2}Indrodution}{3}{section.2}
+\contentsline {section}{\numberline {3}Related Work}{3}{section.3}
+\contentsline {subparagraph}{\nonumberline Definition Intelligent Parking Systems}{4}{section*.2}
+\contentsline {subparagraph}{\nonumberline Definition Shared Parking}{4}{section*.3}
+\contentsline {subparagraph}{\nonumberline Guidance Information Systems}{4}{section*.4}
+\contentsline {subparagraph}{\nonumberline Transit-Based Information Systems}{4}{section*.5}
+\contentsline {subparagraph}{\nonumberline Smart Payment Systems}{4}{section*.6}
+\contentsline {subparagraph}{\nonumberline E-parking}{5}{section*.7}
+\contentsline {subparagraph}{\nonumberline Automated Parking}{5}{section*.8}
+\contentsline {subparagraph}{\nonumberline Shared Parking}{5}{section*.9}
+\contentsline {section}{\numberline {4}Fundamental conceptual points}{5}{section.4}
+\contentsline {section}{\numberline {5}Requirement Analysis}{6}{section.5}
+\contentsline {subsection}{\numberline {5.1}Requirement Analysis regarding Basic Features}{6}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Requirement Analysis regarding Security Aspects}{6}{subsection.5.2}
+\contentsline {section}{\numberline {6}Design}{7}{section.6}
+\contentsline {subsection}{\numberline {6.1}Basic features}{7}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Fraud Prevention}{7}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Fraud Detection}{7}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Fraud Punishment}{8}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Fraud Compensation}{8}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Flow of the Money}{8}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Example}{8}{subsection.6.7}
+\contentsline {section}{\numberline {7}Security Analysis}{10}{section.7}
+\contentsline {section}{\numberline {8}Implementation}{10}{section.8}
+\contentsline {section}{\numberline {9}Future Work}{10}{section.9}
+\contentsline {section}{\numberline {10}Conclusion}{10}{section.10}
+\contentsline {section}{\numberline {11}Acknowledgments}{10}{section.11}

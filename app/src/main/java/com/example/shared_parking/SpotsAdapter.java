@@ -12,10 +12,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.LinkedList;
 import java.util.List;
 
 class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
-    private List<ParkingSpace> parkingSpaces;
+    private List<JSONObject> parkingSpaces;
     private SpotsChangeListener spotsChangeListener;
     private static final String TAG = "SpotsAdapter";
 
@@ -23,10 +28,15 @@ class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
         void onClick(View view, int spotId);
     }
 
-    public SpotsAdapter(List<ParkingSpace> parkingSpaces, SpotsChangeListener spotsChangeListener) {
+    public SpotsAdapter(List<JSONObject> parkingSpaces, SpotsChangeListener spotsChangeListener) {
         this.parkingSpaces = parkingSpaces;
         this.spotsChangeListener = spotsChangeListener;
         //this.listener = listener;
+    }
+
+    public void setItems(List<JSONObject> parkingSpaces){
+        this.parkingSpaces = parkingSpaces;
+        Log.e(TAG, "parkingSpaces after update in adapter" + parkingSpaces);
     }
 
     // Create new views (invoked by the layout manager)
@@ -41,16 +51,20 @@ class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ParkingSpace parkingSpace = parkingSpaces.get(position);
-        holder.postCode.setText(String.valueOf(parkingSpace.getAddress().getPostCode()));
-        holder.city.setText(parkingSpace.getAddress().getCity());
-        holder.street.setText(parkingSpace.getAddress().getStreet());
-        holder.number.setText(String.valueOf(parkingSpace.getAddress().getNumber()));
-        holder.lat.setText(String.valueOf(parkingSpace.getLat()));
-        holder.lng.setText(String.valueOf(parkingSpace.getLng()));
+        JSONObject parkingSpace = null;
+        try {
+            parkingSpace = parkingSpaces.get(position);
+            holder.postCode.setText(parkingSpace.getString("postcode"));
+            holder.city.setText(parkingSpace.getString("city"));
+            holder.street.setText(parkingSpace.getString("street"));
+            holder.number.setText(parkingSpace.getString("number"));
+            holder.lat.setText(parkingSpace.getString("lat"));
+            holder.lng.setText(parkingSpace.getString("lng"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         holder.spotId = position;
         holder.spotsChangeListener = spotsChangeListener;
-
     }
 
     // Return the size of your dataset (invoked by the layout manager)

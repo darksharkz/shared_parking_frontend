@@ -3,6 +3,14 @@ package com.example.shared_parking;
 import android.arch.persistence.room.ColumnInfo;
 
 public class Address {
+
+    public Address(int postCode, String city, String street, int number){
+        this.postCode = postCode;
+        this.city = city;
+        this.street = street;
+        this.number = number;
+    }
+
     @ColumnInfo(name = "post_code")
     private int postCode;
 

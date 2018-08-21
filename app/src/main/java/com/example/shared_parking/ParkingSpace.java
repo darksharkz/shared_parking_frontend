@@ -9,7 +9,7 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(foreignKeys = @ForeignKey(entity = User.class, parentColumns = "uid", childColumns = "user_id"))
 public class ParkingSpace {
 
-    public ParkingSpace(int id, Address address, float lat, float lng, int userId){
+    public ParkingSpace(int id, Address address, double lat, double lng, int userId){
         this.id = id;
         this.address = address;
         this.lat = lat;
@@ -21,8 +21,8 @@ public class ParkingSpace {
     private int id;
     @Embedded
     private Address address;
-    private float lat;
-    private float lng;
+    private double lat;
+    private double lng;
     @ColumnInfo(name = "user_id")
     private int userId;
 
@@ -43,7 +43,7 @@ public class ParkingSpace {
     }
 
 
-    public float getLat() {
+    public double getLat() {
         return lat;
     }
 
@@ -51,7 +51,7 @@ public class ParkingSpace {
         this.lat = lat;
     }
 
-    public float getLng() {
+    public double getLng() {
         return lng;
     }
 

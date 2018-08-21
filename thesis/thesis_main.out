@@ -1,20 +1,28 @@
 \BOOKMARK [1][-]{section.1}{Abstract}{}% 1
 \BOOKMARK [1][-]{section.2}{Indrodution}{}% 2
 \BOOKMARK [1][-]{section.3}{Related Work}{}% 3
-\BOOKMARK [1][-]{section.4}{Fundamental conceptual points}{}% 4
-\BOOKMARK [1][-]{section.5}{Requirement Analysis}{}% 5
-\BOOKMARK [2][-]{subsection.5.1}{Requirement Analysis regarding Basic Features}{section.5}% 6
-\BOOKMARK [2][-]{subsection.5.2}{Requirement Analysis regarding Security Aspects}{section.5}% 7
-\BOOKMARK [1][-]{section.6}{Design}{}% 8
-\BOOKMARK [2][-]{subsection.6.1}{Basic features}{section.6}% 9
-\BOOKMARK [2][-]{subsection.6.2}{Fraud Prevention}{section.6}% 10
-\BOOKMARK [2][-]{subsection.6.3}{Fraud Detection}{section.6}% 11
-\BOOKMARK [2][-]{subsection.6.4}{Fraud Punishment}{section.6}% 12
-\BOOKMARK [2][-]{subsection.6.5}{Fraud Compensation}{section.6}% 13
-\BOOKMARK [2][-]{subsection.6.6}{Flow of the Money}{section.6}% 14
-\BOOKMARK [2][-]{subsection.6.7}{Example}{section.6}% 15
-\BOOKMARK [1][-]{section.7}{Security Analysis}{}% 16
-\BOOKMARK [1][-]{section.8}{Implementation}{}% 17
-\BOOKMARK [1][-]{section.9}{Future Work}{}% 18
-\BOOKMARK [1][-]{section.10}{Conclusion}{}% 19
-\BOOKMARK [1][-]{section.11}{Acknowledgments}{}% 20
+\BOOKMARK [1][-]{section.4}{System Model and Requirements}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{High-level Overview}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{System Model}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Functional Requirements}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{Security Requirements}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Design}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{Functional features}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Security features}{section.5}% 11
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Rating Module}{subsection.5.2}% 12
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Reporting Module}{subsection.5.2}% 13
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Verification Module}{subsection.5.2}% 14
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Reputation Module}{subsection.5.2}% 15
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Deciding who the scammer}{subsection.5.2}% 16
+\BOOKMARK [3][-]{subsubsection.5.2.6}{Resolving a Conflict}{subsection.5.2}% 17
+\BOOKMARK [3][-]{subsubsection.5.2.7}{Dealing with fraud}{subsection.5.2}% 18
+\BOOKMARK [3][-]{subsubsection.5.2.8}{Example}{subsection.5.2}% 19
+\BOOKMARK [1][-]{section.6}{Security Analysis}{}% 20
+\BOOKMARK [2][-]{subsection.6.1}{Fraud Detection}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.2}{Fraud Punishment}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.3}{Fraud Prevention}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.4}{Fraud Compensation}{section.6}% 24
+\BOOKMARK [1][-]{section.7}{Implementation}{}% 25
+\BOOKMARK [1][-]{section.8}{Future Work}{}% 26
+\BOOKMARK [1][-]{section.9}{Conclusion}{}% 27
+\BOOKMARK [1][-]{section.10}{Acknowledgments}{}% 28

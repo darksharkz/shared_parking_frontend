@@ -10,8 +10,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Simon Englert</string>
-    <string name="nav_header_subtitle">simon.englert@stud-mail.uni-wuerzburg.de</string>
+    <string name="nav_header_title">Please register...</string>
+    <string name="nav_header_subtitle">...or log in!</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="action_notifications">Notifications</string>

@@ -1,5 +1,7 @@
 package com.example.shared_parking;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,6 +12,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.VolleyError;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class LoginFragment extends Fragment implements View.OnClickListener{
     private EditText Mail;
@@ -37,6 +45,29 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnLogin:
+                NetworkUtilities.login(Mail.getText().toString(), Password.getText().toString(), getContext(),
+                        new ServerCallback() {
+                            @Override
+                            public void onSuccess(JSONObject result) {
+                                Context context = getContext();
+                                SharedPreferences sharedPref = context.getSharedPreferences("key", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                try {
+                                    editor.putString("auth_token", result.getString("auth_token"));
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                editor.commit();
+                                Toast toast = Toast.makeText(getContext(), sharedPref.getString("auth_token", "default"), Toast.LENGTH_LONG);
+                                toast.show();
+                            }
+
+                            @Override
+                            public void onFailure(VolleyError error) {
+                                Toast toast = Toast.makeText(getContext(), "Fataler Fehler", Toast.LENGTH_LONG);
+                                toast.show();
+                            }
+                        });
                 break;
             case R.id.tvLogin:
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();

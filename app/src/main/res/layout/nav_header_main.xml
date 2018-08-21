@@ -16,7 +16,7 @@
         android:id="@+id/tvHeaderBalance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="8,73 €" />
+        android:text="--,-- €" />
 
     <ImageView
         android:id="@+id/ivHeader"

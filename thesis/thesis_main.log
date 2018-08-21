@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.7.31)  4 AUG 2018 15:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.7.31)  20 AUG 2018 12:17
 entering extended mode
 **./thesis_main.tex
 (thesis_main.tex
@@ -532,51 +532,90 @@ Non-PDF special ignored!
 <special> header=psfrag.pro
 
 {C:/Users/Simon/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
+(thesis_main.toc)
 \tf@toc=\write5
 \openout5 = `thesis_main.toc'.
 
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+ [2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
 
  []
 
 [5]
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 336.
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 352--354
+
+ []
+
+[8]
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 357.
 
  ("E:\Users\Simon\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\omsaer.fd"
 File: omsaer.fd 1999/12/27
 )
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 336.
-[6] [7]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 357.
 
-LaTeX Warning: Reference `img:example-grafik' on page 8 undefined on input line
- 373.
-
-
-LaTeX Warning: Reference `img:example-grafik' on page 8 undefined on input line
- 373.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
+
+ []
+
+[10] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
+
+ []
+
+[14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
 
  []
 
@@ -584,55 +623,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 375--376
 
 pdfTeX warning: pdflatex (file ./example_grafik.pdf): PDF inclusion: found PDF 
 version <1.7>, but at most version <1.5> allowed
-<example_grafik.pdf, id=138, 654.40488pt x 569.0058pt>
+<example_grafik.pdf, id=266, 654.40488pt x 569.0058pt>
 File: example_grafik.pdf Graphic file (type pdf)
 <use example_grafik.pdf>
-Package pdftex.def Info: example_grafik.pdf  used on input line 379.
+Package pdftex.def Info: example_grafik.pdf  used on input line 488.
 (pdftex.def)             Requested size: 369.8992pt x 312.9802pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
 
  []
 
-[9 <./example_grafik.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 434.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 434.
+[17] [18 <./example_grafik.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 507--508
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 522--523
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
+
+ []
+
+[21] (thesis_main.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 589.
+ [22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 589.
  (thesis_main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 434.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 434.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 589.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 589.
 Package rerunfilecheck Info: File `thesis_main.out' has not changed.
-(rerunfilecheck)             Checksum: E3A7C7CE063E04203219802D1CDBC1A6;1207.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 434.
+(rerunfilecheck)             Checksum: BD5FA48EFAFD46A1197324F0A6C75FD9;1803.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 589.
  ) 
 Here is how much of TeX's memory you used:
- 8728 strings out of 492973
- 139900 string characters out of 3126692
- 325138 words of memory out of 3000000
- 12419 multiletter control sequences out of 15000+200000
- 36285 words of font info for 82 fonts, out of 3000000 for 9000
+ 8798 strings out of 492973
+ 141152 string characters out of 3126692
+ 326584 words of memory out of 3000000
+ 12434 multiletter control sequences out of 15000+200000
+ 33114 words of font info for 74 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,51p,9092b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,11n,51p,9092b,385s stack positions out of 5000i,500n,10000p,200000b,50000s
 <E:/Users/Simon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb><E:/Users/Simon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb><E:/Users/Simon/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb><E:/Users/Simon/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><E:/Users/Simon/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><E:/Users/Simon/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><E:/
-Users/Simon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ssbx10.pfb><E:/Users/Simon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb>
-Output written on thesis_main.pdf (10 pages, 399169 bytes).
+blic/amsfonts/cm/cmr12.pfb><E:/Users/Simon/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr17.pfb><E:/Users/Simon/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><E:/Users/Simon/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><E:/Users/Si
+mon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><E:/Users/Simon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmti12.pfb>
+Output written on thesis_main.pdf (22 pages, 449678 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 359 PDF objects out of 1000 (max. 8388607)
+ 100 named destinations out of 1000 (max. 500000)
+ 230 words of extra memory for PDF output out of 10000 (max. 10000000)
 

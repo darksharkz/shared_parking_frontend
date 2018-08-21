@@ -9,6 +9,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.VolleyError;
+
+import org.json.JSONObject;
 
 public class SignUpFragment extends Fragment implements View.OnClickListener{
         private EditText Mail, FirstName, LastName, Password;
@@ -36,6 +41,20 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.btnSignUp:
+                    NetworkUtilities.register(Mail.getText().toString(), FirstName.getText().toString(), LastName.getText().toString(), Password.getText().toString(), getContext(),
+                            new ServerCallback() {
+                                @Override
+                                public void onSuccess(JSONObject result) {
+                                    Toast toast = Toast.makeText(getContext(), result.toString(), Toast.LENGTH_LONG);
+                                    toast.show();
+                                }
+
+                                @Override
+                                public void onFailure(VolleyError error) {
+                                    Toast toast = Toast.makeText(getContext(), "Fataler Fehler", Toast.LENGTH_LONG);
+                                    toast.show();
+                                }
+                            });
                     break;
                 case R.id.tvSignUp:
                     FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();

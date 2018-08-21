@@ -2,6 +2,7 @@ package com.example.shared_parking;
 
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import java.util.List;
 class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
     private List<ParkingSpace> parkingSpaces;
     private SpotsChangeListener spotsChangeListener;
+    private static final String TAG = "SpotsAdapter";
 
     public interface SpotsChangeListener {
         void onClick(View view, int spotId);
@@ -32,7 +34,7 @@ class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
     public SpotsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_spots, parent, false);
-
+        Log.e(TAG, "onCreateViewHolder");
         return new SpotsAdapter.ViewHolder(itemView);
     }
 
@@ -46,7 +48,7 @@ class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
         holder.number.setText(String.valueOf(parkingSpace.getAddress().getNumber()));
         holder.lat.setText(String.valueOf(parkingSpace.getLat()));
         holder.lng.setText(String.valueOf(parkingSpace.getLng()));
-        holder.spotId = parkingSpace.getId();
+        holder.spotId = position;
         holder.spotsChangeListener = spotsChangeListener;
 
     }
@@ -65,6 +67,7 @@ class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
 
         public ViewHolder(View view) {
             super(view);
+            Log.e(TAG, "create ViewHolder");
             postCode = (TextView) view.findViewById(R.id.list_spots_postCode);
             city = (TextView) view.findViewById(R.id.list_spots_city);
             street = (TextView) view.findViewById(R.id.list_spots_street);

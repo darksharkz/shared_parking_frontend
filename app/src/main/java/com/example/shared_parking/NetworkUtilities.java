@@ -36,7 +36,7 @@ final public class NetworkUtilities {
     /** Timeout (in ms) we specify for each http request */
     public static final int HTTP_REQUEST_TIMEOUT_MS = 30 * 1000;
     /** Base URL for the Shared Parking REST API Service */
-    public static final String BASE_URL = "http://192.168.2.105:8080/shared_parking";
+    public static final String BASE_URL = "http://betreffilada.de:777/shared_parking";
     /** URI for signup service */
     public static final String REGISTER_URI = BASE_URL + "/register/doregister";
     /** URI for login service */

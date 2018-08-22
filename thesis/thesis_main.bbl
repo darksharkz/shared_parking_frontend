@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{itdp2014shared}
 Institute for Transportation and Development Policy.
@@ -22,15 +22,57 @@ Victoria Transport~Policy Institute.
 \newblock Shared parking.
 \newblock 2015.
 
+\bibitem{Kim2015ASP}
+Oanh Tran~Thi Kim, Nguyen~Dang Tri, Vandung Nguyen, Nguyen~H. Tran, and
+  Choong~Seon Hong.
+\newblock A shared parking model in vehicular network using fog and cloud
+  environment.
+\newblock {\em 2015 17th Asia-Pacific Network Operations and Management
+  Symposium (APNOMS)}, pages 321--326, 2015.
+
 \bibitem{shaheen2005smart}
 Susan Shaheen.
 \newblock Smart parking management field test: A bay area rapid transit (bart)
   district parking demonstration.
 \newblock 2005.
 
+\bibitem{shao2016simple}
+Chaoyi Shao, Hai Yang, Yi~Zhang, and Jintao Ke.
+\newblock A simple reservation and allocation model of shared parking lots.
+\newblock {\em Transportation Research Part C: Emerging Technologies}, 71:303
+  -- 312, 2016.
+
 \bibitem{shoup2006cruising}
 Donald~C Shoup.
 \newblock Cruising for parking.
 \newblock {\em Transport Policy}, 13(6):479--486, 2006.
+
+\bibitem{xiao2018shared}
+Haohan Xiao, Meng Xu, and Ziyou Gao.
+\newblock Shared parking problem: A novel truthful double auction mechanism
+  approach.
+\newblock {\em Transportation Research Part B: Methodological}, 109:40--69,
+  2018.
+
+\bibitem{xu2016private}
+Su~Xiu Xu, Meng Cheng, Xiang~T.R. Kong, Hai Yang, and George~Q. Huang.
+\newblock Private parking slot sharing.
+\newblock {\em Transportation Research Part B: Methodological}, 93:596 -- 617,
+  2016.
+
+\bibitem{yu2018optimal}
+Jingwei Yu, Qian Wan, and Zhibin Li.
+\newblock Optimal distribution model of shared parking space in large shopping
+  malls at night.
+\newblock In {\em IOP Conference Series: Earth and Environmental Science},
+  volume 153, page 032006. IOP Publishing, 2018.
+
+\bibitem{zhang2019pricing}
+Wei Zhang and Shuaian Wang.
+\newblock Pricing of shared-parking lot: An application of hotelling model.
+\newblock In Giuseppe De~Pietro, Luigi Gallo, Robert~J. Howlett, Lakhmi~C.
+  Jain, and Ljubo Vlacic, editors, {\em Intelligent Interactive Multimedia
+  Systems and Services}, pages 310--317, Cham, 2019. Springer International
+  Publishing.
 
 \end{thebibliography}

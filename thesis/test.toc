@@ -1,0 +1,70 @@
+\contentsline {section}{\numberline {1}Abstract}{4}{section.1}
+\contentsline {section}{\numberline {2}Indrodution}{4}{section.2}
+\contentsline {section}{\numberline {3}Related Work}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Overview}{6}{subsection.3.1}
+\contentsline {subparagraph}{\nonumberline Intelligent Parking Systems}{6}{section*.2}
+\contentsline {subparagraph}{\nonumberline Shared Parking}{6}{section*.3}
+\contentsline {subsection}{\numberline {3.2}Intelligent Parking Systems}{6}{subsection.3.2}
+\contentsline {subparagraph}{\nonumberline Guidance Information Systems}{6}{section*.4}
+\contentsline {subparagraph}{\nonumberline Transit-Based Information Systems}{6}{section*.5}
+\contentsline {subparagraph}{\nonumberline Smart Payment Systems}{7}{section*.6}
+\contentsline {subparagraph}{\nonumberline E-parking}{7}{section*.7}
+\contentsline {subparagraph}{\nonumberline Automated Parking}{7}{section*.8}
+\contentsline {subsection}{\numberline {3.3}Shared Parking}{7}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Trust Systems}{10}{subsection.3.4}
+\contentsline {subparagraph}{\nonumberline Methodology}{10}{section*.9}
+\contentsline {subparagraph}{\nonumberline Type of distribution}{11}{section*.10}
+\contentsline {subparagraph}{\nonumberline Anonymity of participants}{11}{section*.11}
+\contentsline {section}{\numberline {4}System Model and Requirements}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}High-level Overview}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}System Model}{12}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Functional Requirements}{13}{subsection.4.3}
+\contentsline {subparagraph}{\nonumberline Low deployment cost and of the shelf hardware}{13}{section*.12}
+\contentsline {subparagraph}{\nonumberline Good Performance and usability}{13}{section*.13}
+\contentsline {subparagraph}{\nonumberline Automatic Processing}{13}{section*.14}
+\contentsline {subparagraph}{\nonumberline Streichen: Neutral Balance}{13}{section*.15}
+\contentsline {subparagraph}{\nonumberline More to come}{13}{section*.16}
+\contentsline {subsection}{\numberline {4.4}Adversary Model and Assumptions}{14}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Adversary Model and Classes of Fraud}{14}{subsubsection.4.4.1}
+\contentsline {subparagraph}{\nonumberline Class 1}{14}{section*.17}
+\contentsline {subparagraph}{\nonumberline Class 2}{14}{section*.18}
+\contentsline {subparagraph}{\nonumberline Class 3}{15}{section*.19}
+\contentsline {subsubsection}{\numberline {4.4.2}Assumptions}{16}{subsubsection.4.4.2}
+\contentsline {subparagraph}{\nonumberline Sufficient parking spaces}{16}{section*.20}
+\contentsline {subparagraph}{\nonumberline Majority assumption}{16}{section*.21}
+\contentsline {subsection}{\numberline {4.5}Security Requirements}{16}{subsection.4.5}
+\contentsline {subparagraph}{\nonumberline Fraud Prevention}{17}{section*.22}
+\contentsline {subparagraph}{\nonumberline Fraud Detection}{17}{section*.23}
+\contentsline {subparagraph}{\nonumberline Fraud Punishment}{17}{section*.24}
+\contentsline {subparagraph}{\nonumberline Fraud Compensation}{17}{section*.25}
+\contentsline {section}{\numberline {5}Design}{17}{section.5}
+\contentsline {subsection}{\numberline {5.1}Functional features}{18}{subsection.5.1}
+\contentsline {subparagraph}{\nonumberline User registration}{18}{section*.26}
+\contentsline {subparagraph}{\nonumberline Balance system}{18}{section*.27}
+\contentsline {subparagraph}{\nonumberline Parking Space management}{18}{section*.28}
+\contentsline {subparagraph}{\nonumberline Renting out a parking space}{18}{section*.29}
+\contentsline {subparagraph}{\nonumberline Renting a parking space}{18}{section*.30}
+\contentsline {subparagraph}{\nonumberline More to come}{18}{section*.31}
+\contentsline {subsection}{\numberline {5.2}Security features}{19}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Rating Module}{19}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Reporting Module}{19}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Verification Module}{20}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Reputation Module}{22}{subsubsection.5.2.4}
+\contentsline {subparagraph}{\nonumberline Contribution Evaluation}{23}{section*.32}
+\contentsline {subparagraph}{\nonumberline Feedback Processing}{23}{section*.33}
+\contentsline {subparagraph}{\nonumberline A Temporal Proximity Factor}{23}{section*.34}
+\contentsline {subparagraph}{\nonumberline Trust Mapping}{24}{section*.35}
+\contentsline {subparagraph}{\nonumberline Reputation Update}{24}{section*.36}
+\contentsline {subsubsection}{\numberline {5.2.5}Sanctioning and Compensation}{25}{subsubsection.5.2.5}
+\contentsline {subsubsection}{\numberline {5.2.6}Example}{26}{subsubsection.5.2.6}
+\contentsline {section}{\numberline {6}Security Analysis}{27}{section.6}
+\contentsline {subsection}{\numberline {6.1}Fraud Detection}{27}{subsection.6.1}
+\contentsline {subparagraph}{\nonumberline Fraud recognition}{27}{section*.37}
+\contentsline {subparagraph}{\nonumberline adversary identification}{28}{section*.38}
+\contentsline {subsection}{\numberline {6.2}Fraud Punishment}{30}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Fraud Prevention}{30}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Fraud Compensation}{31}{subsection.6.4}
+\contentsline {section}{\numberline {7}Implementation}{31}{section.7}
+\contentsline {section}{\numberline {8}Future Work}{31}{section.8}
+\contentsline {section}{\numberline {9}Conclusion}{31}{section.9}
+\contentsline {section}{\numberline {10}Acknowledgments}{31}{section.10}

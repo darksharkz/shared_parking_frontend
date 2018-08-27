@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.12)  27 AUG 2018 15:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.12)  27 AUG 2018 13:24
 entering extended mode
-**./thesis_main.tex
-(thesis_main.tex
+**./test.tex
+(test.tex
 LaTeX2e <2017-04-15>
 Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
 
@@ -448,8 +448,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip61
-) (thesis_main.aux)
-\openout1 = `thesis_main.aux'.
+) (test.aux)
+\openout1 = `test.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 250.
 LaTeX Font Info:    ... okay on input line 250.
@@ -522,9 +522,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 250.
 LaTeX Info: Redefining \pageref on input line 250.
 LaTeX Info: Redefining \nameref on input line 250.
- (thesis_main.out) (thesis_main.out)
+ (test.out) (test.out)
 \@outlinefile=\write4
-\openout4 = `thesis_main.out'.
+\openout4 = `test.out'.
 
 LaTeX Font Info:    Try loading font information for T1+aess on input line 257.
 
@@ -547,33 +547,31 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 Non-PDF special ignored!
 
-{C:/Users/Simon Englert/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
+{C:/Users/Simon Englert/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (te
+st.toc)
 \tf@toc=\write5
-\openout5 = `thesis_main.toc'.
+\openout5 = `test.toc'.
 
-[2]
+ [2] [3]
 
-LaTeX Warning: Citation `shoup2006cruising' on page 3 undefined on input line 2
+LaTeX Warning: Citation `shoup2006cruising' on page 4 undefined on input line 2
 86.
-
-[3]
-
-LaTeX Warning: Citation `idris2009car' on page 4 undefined on input line 306.
-
-
-LaTeX Warning: Citation `fraifer2016investigation' on page 4 undefined on input
- line 306.
 
 [4]
 
-LaTeX Warning: Citation `itdp2014shared' on page 5 undefined on input line 309.
+LaTeX Warning: Citation `idris2009car' on page 5 undefined on input line 306.
+
+
+LaTeX Warning: Citation `fraifer2016investigation' on page 5 undefined on input
+ line 306.
+
+[5]
+
+LaTeX Warning: Citation `itdp2014shared' on page 6 undefined on input line 309.
 
 
 
-LaTeX Warning: Citation `vtpi2015shared' on page 5 undefined on input line 309.
+LaTeX Warning: Citation `vtpi2015shared' on page 6 undefined on input line 309.
 
 
 
@@ -582,31 +580,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 309--310
  []
 
 
-LaTeX Warning: Citation `shaheen2005smart' on page 5 undefined on input line 31
+LaTeX Warning: Citation `shaheen2005smart' on page 6 undefined on input line 31
 3.
 
-[5]
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
-[6]
+[7]
 
-LaTeX Warning: Citation `shao2016simple' on page 7 undefined on input line 335.
-
-
-
-LaTeX Warning: Citation `yu2018optimal' on page 7 undefined on input line 335.
-
-
-LaTeX Warning: Citation `xu2016private' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `xiao2018shared' on page 7 undefined on input line 339.
+LaTeX Warning: Citation `shao2016simple' on page 8 undefined on input line 335.
 
 
 
-LaTeX Warning: Citation `zhang2019pricing' on page 7 undefined on input line 34
+LaTeX Warning: Citation `yu2018optimal' on page 8 undefined on input line 335.
+
+
+LaTeX Warning: Citation `xu2016private' on page 8 undefined on input line 337.
+
+
+LaTeX Warning: Citation `xiao2018shared' on page 8 undefined on input line 339.
+
+
+
+LaTeX Warning: Citation `zhang2019pricing' on page 8 undefined on input line 34
 1.
 
 
@@ -614,23 +612,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 343--344
 
  []
 
-[7]
+[8]
 
-LaTeX Warning: Citation `Kim2015ASP' on page 8 undefined on input line 345.
+LaTeX Warning: Citation `Kim2015ASP' on page 9 undefined on input line 345.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
 
-[8]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
 
-LaTeX Warning: Citation `mousa2015trust' on page 9 undefined on input line 365.
-
+LaTeX Warning: Citation `mousa2015trust' on page 10 undefined on input line 365
+.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 365--366
@@ -643,22 +641,22 @@ Overfull \hbox (0.43968pt too wide) in paragraph at lines 367--368
 clas-si-fies trust/reputations
  []
 
-[9]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
  []
 
-[10]
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
-[11]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
-[12]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 418--419
 
  []
@@ -674,10 +672,10 @@ LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <14.4> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 422.
 
 
-LaTeX Warning: Citation `mousa2015trust' on page 13 undefined on input line 430
+LaTeX Warning: Citation `mousa2015trust' on page 14 undefined on input line 430
 .
 
-[13] [14]
+[14] [15]
 Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
@@ -697,17 +695,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 463--464
 
  []
 
-[15]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 469--470
 
  []
 
-[16] [17] [18]
+[17] [18] [19]
 Underfull \hbox (badness 10000) in paragraph at lines 506--507
 
  []
 
-[19]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
@@ -732,17 +730,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 529--530
 
  []
 
-[20]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 533--534
 
  []
 
 
-LaTeX Warning: Citation `mousa2017reputation' on page 21 undefined on input lin
+LaTeX Warning: Citation `mousa2017reputation' on page 22 undefined on input lin
 e 535.
 
 
-LaTeX Warning: Citation `mousa2015trust' on page 21 undefined on input line 535
+LaTeX Warning: Citation `mousa2015trust' on page 22 undefined on input line 535
 .
 
 
@@ -755,31 +753,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 537--538
 
  []
 
-[21]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 545--546
 
  []
 
-[22]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 572--573
 
  []
 
-[23]
-
-LaTeX Warning: Reference `img:example-grafik' on page 24 undefined on input lin
-e 593.
-
-
-LaTeX Warning: Reference `img:example-grafik' on page 24 undefined on input lin
-e 593.
-
-
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 593--594
 
  []
 
-[24]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 595--596
 
  []
@@ -788,7 +777,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 595--596
 
 pdfTeX warning: pdflatex (file ./example_grafik.pdf): PDF inclusion: found PDF 
 version <1.7>, but at most version <1.5> allowed
-<example_grafik.pdf, id=292, pagebox=cropbox, 654.40488pt x 569.0058pt>
+<example_grafik.pdf, id=331, pagebox=cropbox, 654.40488pt x 569.0058pt>
 File: example_grafik.pdf Graphic file (type pdf)
 <use example_grafik.pdf>
 Package pdftex.def Info: example_grafik.pdf  used on input line 599. on input l
@@ -800,7 +789,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 604--605
 
  []
 
-[25]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 615--616
 
  []
@@ -810,13 +799,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 617--618
 
  []
 
-[26 <./example_grafik.pdf>]
+[27 <./example_grafik.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 619--620
 
  []
 
 
-LaTeX Warning: Citation `mousa2017reputation' on page 27 undefined on input lin
+LaTeX Warning: Citation `mousa2017reputation' on page 28 undefined on input lin
 e 623.
 
 
@@ -825,28 +814,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 623--624
  []
 
 
-LaTeX Warning: Citation `mousa2017reputation' on page 27 undefined on input lin
+LaTeX Warning: Citation `mousa2017reputation' on page 28 undefined on input lin
 e 628.
 
 
-LaTeX Warning: Citation `mousa2017reputation' on page 27 undefined on input lin
+LaTeX Warning: Citation `mousa2017reputation' on page 28 undefined on input lin
 e 629.
 
 
-LaTeX Warning: Citation `mousa2015trust' on page 27 undefined on input line 630
+LaTeX Warning: Citation `mousa2015trust' on page 28 undefined on input line 630
 .
 
-[27]
+[28]
 
-LaTeX Warning: Citation `mousa2017reputation' on page 28 undefined on input lin
+LaTeX Warning: Citation `mousa2017reputation' on page 29 undefined on input lin
 e 631.
 
 
-LaTeX Warning: Citation `mousa2017reputation' on page 28 undefined on input lin
+LaTeX Warning: Citation `mousa2017reputation' on page 29 undefined on input lin
 e 635.
 
 
-LaTeX Warning: Citation `mousa2015trust' on page 28 undefined on input line 636
+LaTeX Warning: Citation `mousa2015trust' on page 29 undefined on input line 636
 .
 
 
@@ -854,67 +843,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 640--641
 
  []
 
-[28] [29]
+[29] [30]
 Underfull \hbox (badness 10000) in paragraph at lines 656--657
 
  []
 
-(thesis_main.bbl [30] [31])
+No file test.bbl.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 705.
- [32]
+[31]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 705.
- (thesis_main.aux)
+ (test.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 705.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 705.
+Package rerunfilecheck Info: File `test.out' has not changed.
+(rerunfilecheck)             Checksum: E9FA4F17075C0772837D05ACA11D4F47;2164.
 
-
-Package rerunfilecheck Warning: File `thesis_main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis_main.out':
-(rerunfilecheck)             Before: 17B896FA27F6E78C0B7BC3AB07553B17;2152
-(rerunfilecheck)             After:  E9FA4F17075C0772837D05ACA11D4F47;2164.
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 705.
  ) 
 Here is how much of TeX's memory you used:
- 8837 strings out of 493312
- 141191 string characters out of 3126344
- 310218 words of memory out of 3000000
- 12115 multiletter control sequences out of 15000+200000
+ 8823 strings out of 493312
+ 140846 string characters out of 3126344
+ 311435 words of memory out of 3000000
+ 12118 multiletter control sequences out of 15000+200000
  33114 words of font info for 74 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,51p,8824b,437s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsection.4.6} has been referenced but does not 
-exist, replaced by a fixed one
-
-<C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Simon Englert/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Simon 
-Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12
-.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi7.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Simon Englert/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Simo
-n Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
-7.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Simon Englert/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/
-Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Simon Englert/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis_main.pdf (32 pages, 560953 bytes).
+ 42i,11n,51p,8817b,408s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Simon Englert/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Simo
+n Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+12.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Simon Englert/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Si
+mon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r17.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Simon Englert/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/User
+s/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Users/Simon Englert/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Simon Englert/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on test.pdf (31 pages, 555563 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 137 named destinations out of 1000 (max. 500000)
+ 454 PDF objects out of 1000 (max. 8388607)
+ 120 named destinations out of 1000 (max. 500000)
  270 words of extra memory for PDF output out of 10000 (max. 10000000)
 

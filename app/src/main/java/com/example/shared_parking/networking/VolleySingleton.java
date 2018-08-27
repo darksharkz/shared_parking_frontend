@@ -1,4 +1,4 @@
-package com.example.shared_parking;
+package com.example.shared_parking.networking;
 
 import android.content.Context;
 

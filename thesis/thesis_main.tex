@@ -359,6 +359,23 @@ At mobypark.com you can find some listings from private persons. However, Mobypa
 
 However, none of the providers discloses information on how they can protect their systems and users from fraud and how they generally deal with fraud. This is presumably because, as Mobypark itself reports on its website, parking spaces are hardly rented for short periods of time like a few hours, but mainly for longer periods (several days to several months). In addition, most of the rented parking spaces are not publicly accessible and key cards or the like must be exchanged prior to and at the end of the rental process. These conditions already lead to a reduction of fraud possibilities. In our application, however, it should also be possible to rent freely accessible parking spaces, even for short periods of time. This creates new opportunities for fraud, which, unlike in the scientific papers mentioned above, we will address in this paper.
 
+\subsection{Trust Systems}
+In order to distinguish malicious and genuine users in our system, we will use a trust system. Since there is a large amount of scientific work and discussion in the area of trust systems, we will not develop any new methods ourselves and will instead fall back on already matured methods, adapt them to our system and thereby make them better fit our system.\\
+
+Trust systems are used in many different forms for many different purposes. Therefore, we have sought to find methods developed for systems that are similar to ours. Finally, we will use a method from the area of "Trust Management and Reputation Systems in Mobile Participatory Sensing Applications". These are systems in which participants use smartphones or similar devices to send information that they received at various locations through the sensors of their devices to a backend server. We will later show how trust methods of such systems can be easily mapped to our trust system. Mousa et. al. wrote a survey on this topic in 2015, which gives a fundamental overview of this area of trust systems\cite{mousa2015trust}:\\
+
+In all these systems, trust is used to assess the reputation of individual users. The calculated reputation is therefore a value for the trustworthiness of the participants and the quality of their contributions. Mousa classifies trust/reputations systems according to methodology, type of distribution and anonymity of participants. 
+
+\subparagraph{Methodology} Either a Trusted Platform Module (TPM) or a reputations score can be used as a methodology for trust assessment. TPM are hardware chips that are installed in the devices of the participants and are therefore not suitable for our system. In the "Future Work" section, trust assessment using TPMs is discussed briefly. For our system, on however, the use of a reputation score, which is calculated directly from the behavior of the participant, is suitable. For the computation of this score the participants' latest activities and his old score are used.
+
+\subparagraph{Type of distribution} The distribution in a trust system can be either central, collaborative or a combination of both. Since our trust score should be hidden from the participants and we possess a trust server, a centralized structure is suitable for us. In this case the trust server receives all information, i.e. the contributions and feedback of the participants, from which it is able to calculate the score of all participants. In collaborative systems, however, each participant computes a separate score for all other participants.
+
+\subparagraph{Anonymity of participants} Finally, anonymous and non anonymous systems can be distinguished. In anonymous systems the anonymity of the participants is preserved. This is neither necessary nor useful in our system, as each participant must provide certain personal data to access our system. \\
+
+In the section x.y.z.z reputation module we will use a trust system corresponding to the above established classification and modify it for our purposes.
+
+The use of such a trust system however allows different attack types which are described in more detail in section x.y attacker model. In the security analysis we will finally show the robustness of our system against these attacks.
+
 \section{System Model and Requirements}
 Now that an overview of the topic has been provided, the next part will deal with a basic system model and the requirements that will be imposed on the design. The system model gives an overview of the different parties that exist in our shared parking model and their relationships with each other. The subsequent requirement analysis is divided into functional and security requirements. Special attention is paid to ensuring that the design is secure. For us security requirements do not only refer to standard security aspects such as encryption, user authentication and authentification, but in particular to the goal of designing our shared parking system in a way that it has the ability to handle fraud independently. The aim of those aspects is to prevent and punish individual users from scamming other users or the system. Various forms and examples of such fraud will be explained in more detail below. The design set up in the later part of the work will adhere to these requirements. We will now start of with a High-level Overview of the Shared Parking System.
 
@@ -366,7 +383,21 @@ Now that an overview of the topic has been provided, the next part will deal wit
 This section gives a high-level overview of the shared parking system to be designed and deals with the basic capabilities of the system. The shared parking system adheres to the definition supplied at the beginning. It offers a platform for an online marketplace where both private and business users can rent and lease parking spaces. End users have the possibility to install an app and participate in the marketplace via their smartphone. This also clarifies the basic capabilities of the system. Every user can offer his own parking spaces for specified periods of time on the platform for rent. Users can also view other users' listings, choose from them and rent those parking spaces. In this system, particular importance is attached to handling fraud. The subsequent requirements define the exact framework under which the design was developed. 
 
 \subsection{System Model}
-The following system model, which is depicted in figure xy, shows the various parties in our shared parking system. On the one hand, there is exactly one operator or service provider. This service provider is responsible for the implementation of the design, operating the system and making the systems services available to the users. The users are those who utilize the system. They can be divided into two roles, whereby a user can be part of both roles at different points in time. On the one hand, there are landlords who own a private parking space and want to rent it out over a certain period of time. On the other hand, there are tenants who are looking for a free parking space to rent for a specific time period. In the course of the thesis, further roles are assigned to the users, which are always explained as soon as they are needed.\\
+The following system model, which is depicted in figure xy, shows the various parties in our \textbf{shared parking system} $SPS$. On the one hand, there is exactly one \textbf{operator} or \textbf{service provider} $SP$. The $SP$ is responsible for the implementation of the design, operating the $SPS$ and making the systems services available to the users. The \textbf{users} $U$ are those who utilize the $SPS$. They can be divided into two roles, whereby a user can be part of both roles at different points in time. On the one hand, there are \textbf{landlords} who own a private \textbf{parking space} and want to rent it out over a certain period of time. On the other hand, there are \textbf{tenants} who are looking for a free parking space to rent for a specific time period.
+
+This work covers fraud in $SPS$ in detail. In the \textbf{case of fraud}, users take on new roles. On the one hand there is the \textbf{adversary}, who is committing fraud, on the other hand there usually is an \textbf{injured party}, which has a disadvantaged caused by the fraud case.
+
+We will later introduce important modules that deal with those fraud cases, in which users once again assume different roles.
+
+The rating module deals with \textbf{ratings}. For each rating there is one user who issues, called the\textbf{ rating user} and one user who receives, called the \textbf{rated user}.
+
+The reporting module deals with \textbf{reports}. One report belongs to one case of fraud. For each report there is one user who issues, called the \textbf{reporting user} and one user who receives, called the \textbf{reported user}.
+
+The verification module verifies reports and the corresponding fraud case. Users who verify the reports are called \textbf{inspectors}.
+
+In the reputation module, \textbf{contributions} from all \textbf{participants} of one fraud case are processed. The participant include the reporting user, reported user and the inspectors. A participants' contributions is the information he provide about the fraud case.
+
+All roles are described in more depth in the detailed description of the modules.\\
 
 To-Do: Figure of system model
 
@@ -376,39 +407,61 @@ The following will cover the main functional requirements in detail.
 \subparagraph{Intuitiveness} The implementation of the design should be intuitive to use. First time users should be able to book or rent a parking space within minutes. Tasks such as user authentication should not be to complex or time-consuming.
 \subparagraph{Neutral Balance} The operator or the system has different costs and revenues. Thus, the operator can either make a profit or lose money. We impose the condition on the system that in the long run, the revenues at least cover or even exceed the costs. This means that there may be time spans in which the costs are greater than the revenues, but if you take a look at the system in the long term, the revenues must surpass the costs.
 \subparagraph{Automatic Processing} Where possible, the system should be prevented from requiring manual intervention. All basic use cases should be able to run automatically by the system. The system may only request manual intervention in exceptional cases. On the one hand this should lead to a fast processing of all inquiries and on the other hand reduce the costs arising from manual work.
-\subparagraph{More to come}
+\subparagraph{More to come}hi\\
 
 There are also areas that do not place any functional requirements. There are aspects to which no special significance is attached in this work. This includes, for example, all legal matters. On the one hand, this work is in the field of computer science and the author does not have the fundamental knowledge to evaluate and judge legal matters. On the other hand, the legal aspect of a shared parking system involves many and various legal factors, which would exceed the scope of this work. Nevertheless, attention was paid during the design to carry out as little legal interference as possible in order to avoid legal difficulties during the implementation.
 
-\subsection{Security Requirements}
-The following will cover the main security requirements in detail.
-On the one hand, requirements are made on information technology security and on the other hand, requirements are mode on how to deal with fraud in the shared parking system. When we talk about fraud, we mean a user's ability to scam other users or the system using its normal functionality in order to gain a profit. In many cases, this has a negative impact on other users. There are numerous possibilities for fraud in the system, some of which are mentioned as follows. We will categorise all fraud cases into three different classes. From now on, we refer to a user who commits fraud as a scammer. Users who are affected by fraud in a negative way will be called injured or injured party. \\
+\subsection{Attacker Model and Assumptions}
 
-The first class of fraud cases are those in which a tenant has booked a parking space, but  it is not available when he arrives. There could be different possibilities as to why the parking space is not available, examples of which are the following.
+\subsubsection{Attacker Model and Classes of Fraud}
+When we talk about fraud, we mean a user's ability to scam other users or the system using its normal functionality in order to gain a profit. In many cases, this has a negative impact on other users. There are numerous possibilities for fraud in the system, some of which are mentioned as follows. We will categorise all fraud cases into three different classes. From now on, we refer to a user who commits fraud as a scammer. Users who are affected by fraud in a negative way will be called injured or injured party. \\
+
+\subparagraph{Class 1} The first class of fraud cases are the result of the general nature of a shared parking system. This class consists of fraud cases where a tenant has booked a parking space, but it is not available when he arrives. There could be different possibilities as to why the parking space is not available, examples of which are the following.
 \begin{itemize}
-\item Scammer parks in a car park, which he has not booked and thus without paying the owner.
+\item Scammer parks in a car park, which another user has booked for this time.
 \item Tenant overstays his booked parking time.
 \item Landlord rents out a parking space, but remains on it himself.
 \item Landlord offers the same parking space multiple times.
 \item Landlord offers a parking space that does not exist.
 \end{itemize}
-As we will see later, Class 1 cases can be handled by our system without manual intervention. \\
+As we will see later, Class 1 cases can be handled by our system without manual intervention. 
 
-We will introduce various modules, such as a report module, to deal with these cases. While these modules will help to deal with Class 1 fraud, they create the opportunity for a new series of fraud cases. These new fraud cases, which we will group into Class 2, try to take advantage of the methods we have introduced to deal with Class 1 fraud. Examples are the ones below.
+\subparagraph{Class 2} To deal with these class 1 cases, we will introduce various modules, such as a report module and a reputation module. While these modules will help to deal with Class 1 fraud, they create the opportunity for a new series of fraud cases. These new fraud cases, which we will group into Class 2, try to take advantage of the methods we have introduced to deal with Class 1 fraud. All well known attacks in this area are described in \cite{mousa2015trust} and are applied to our system as follows:
 \begin{itemize}
-\item User tries to impose costs on to the system by doing false reports.
-\item Scammer pretends to be the injured party.
-\item Scammer accuses another user of fraud.
+\item \textbf{Corruption attack:} An attacker unintentionally or deliberately sends corrupted data and information. An example of a corruption attack is when a reporting user enters an incorrect license plate number for the reported user.
+\item \textbf{On-off attack:} An attacker alternates between malicious and genuine behavior. This is particularly difficult to detect when the transition appears to occur randomly.
+\item \textbf{Re-entry attack:} An attacker tries to white wash his trust value by rejoining the system with a new identity. In our system this corresponds to a new registration of an existing user.
+\item \textbf{Collusion:} Several attackers act together and execute attacks collectively. Joint attacks have a greater impact on the system and are harder to detect than acting independently.
+\item \textbf{Sybil attack:} This is an extension of the re-entry attack. An attacker creates multiple identities or accounts within the system and utilizes them in a collusion attack.
+\item \textbf{Reputation lag exploitation:} The attacker uses the period between his first attack and the evaluation and corresponding downgrading of his trust value to launch a large number of attacks.
+\item \textbf{GPS spoofing attacks:} The attacker tampers with the GPS location of his device.
+\item \textbf{Unfair ratings:} The attacker does not rate another user according to his genuine opinion.
+\item \textbf{Bad mouthing or negative discrimination attack:} The attacker raises false accusations or assigns a bad rating to a genuine user.
+\item \textbf{Ballot stuffing or positive discrimination attack:} The attacker does not report misbehaviour or assigns a good rating to a malicious user.
+%User tries to impose costs on to the system by doing false reports. Scammer pretends to be the injured party. Scammer accuses another user of fraud.
 \end{itemize}
-We shall see that Class 2 cases can also be solved without manual intervention by expanding our modules. \\
+We shall see that Class 2 cases can also be dealt with mostly without manual intervention by using a robust reputation module. 
 
-While the first two classes cover the main and most frequent cases of fraud, there are others. Class 3 cases differ from the other classes in that it will not be possible to solve them without manual intervention. These are exceptional cases that occur only in low frequency. Examples are given below.
+\subparagraph{Class 3} While the first two classes cover the main and most frequent cases of fraud, there are others. Class 3 cases differ from the other classes in that it will not be possible to solve them without manual intervention. These are exceptional cases that occur only in low frequency. Examples are given below.
 \begin{itemize}
 \item Landlord rents out parking spaces that they do not own themselves.
 \item Tenant cancels booking of parking space without paying.
 \end{itemize}
+For this class of fraud cases, we will also show methods of dealing with them.\\
 
-The system must be able to handle all these cases of fraud mentioned above successfully. In the following we will define what we mean by 'successful handling'. We therefore set requirements that must be met for the various cases of fraud.
+Most of these attacks can only be performed by registered users. In contrast, however, there is a case of fraud, which can also be carried out by persons outside the system. A parking offender who occupies a booked, private parking space does not necessarily have to be registered in the system. Dealing with this problem is not the main focus of this work, but a suggestion on how to deal with it when realizing the system will be provided later on.
+
+\subsection{Assumptions}
+The following are some assumptions that apply in our system.\\
+
+\subparagraph{Sufficient parking spaces} We assume that there are always enough parking spaces available for compensation. If the system has low occupancy levels, a suitable free parking space can always be found. If this is not the case, there will always be landlords  who offer their parking spaces for a particularly expensive and overpriced costs. These places will still be vacant even in situations where almost all capacities are occupied. These are parking spaces that are still available for use as compensation for injured parties, even when there is a high level of occupancy. 
+
+\subparagraph{Majority assumption} We assume that the majority of users in our system are acting according to the rules, meaning that there are always a maximum of 50 percent adversaries. One reason for this is that the majority of people are genuine, especially when they know that offenses are being punished hard. We also offer an opportunity to report inadvertent misdemeanors by yourself, in order to prevent major penalties. This prevents inadvertent misdemeanors by genuine users.\\
+
+\subsection{Security Requirements}
+The following will cover the main security requirements in detail. On the one hand, requirements are made on information technology security and on the other hand, requirements are mode on how to deal with fraud in the shared parking system. \\
+
+The system must be able to handle all these cases of fraud mentioned in the attacker model above successfully. In the following we will define what we mean by 'successful handling'. We therefore set requirements that must be met for the various cases of fraud.
 \subparagraph{Fraud Prevention} The design of the system should be such that fraud is fundamentally prevented. If this is not possible in all cases, it should be ensured that it is not worth the effort for the scammer or that scammers are quickly discovered. This is where the second point comes into play.
 \subparagraph{Fraud Detection} The system should be able to detect fraud. This includes, on the one hand, the simple recognition of fraud and, on the other hand, the ability to correctly identify the scammer. The later is particularly important for the next point.
 \subparagraph{Fraud Punishment} The design should be such that a scammer can be punished by the system. After a scammer is detected, the system should always be able to penalize him. Punishment can also support the first requirement by acting as a deterrent for fraud.
@@ -445,70 +498,93 @@ In order to prevent fraud different modules are introduced. There is a rating mo
 
 Firstly, there is the possibility of reporting a violation that occurs during a rental contract. On the overview page of the contract, you can choose from various reporting reasons, all of which refer to this contract. If the user finds a suitable violation from the list, he selects it and the system can respond to it without manual intervention. For example, tenants always have the option "The rented parking space is occupied by another vehicle", in which the license plate of the car, which occupies the parking space, is also provided. In a similar way, there is the option "Tenant has overrun parking time". for landlords. For all reasons that are not explicitly mentioned, meaning that the system cannot resolve them automatically, there is a general reporting function that requires manual intervention from the provider.
 
-If the system receives a report, it can be sure that it is always a case of fraud. Either the user reports a real fraud case, which in this case has to be fraud class 1, or it is a false report from the user, which he expects to benefit from. This would again be a case of fraud, which can be classified in fraud class 2. The system must therefore first check the truth of the message. The verification system exists for this purpose and is explained below. This system now checks whether the report was given truthfully and acts accordingly. How exactly the system acts is explained in detail in the section 'Sanctioning and Compensation'.
+If the system receives a report, it can be sure that it is always a case of fraud. Either the user reports a real fraud case, which in this case has to be fraud class 1, or it is a false report from the user, which he expects to benefit from. This would again be a case of fraud, which can be classified in fraud class 2. The system must therefore first check the truth of the report. The verification module exists for this purpose and is explained below. After the verification module has identified who the scammer is, the necessary steps for punishment can be taken. The section 'Sanctioning and Compensation' explains in detail how exactly the system acts to compensate or punish users.
 
-\subsubsection{Verification Module} Another important security tool is the verification module. It allows the system to check whether a rule violation has actually been committed. Rule violations that can be verified in this way are those of fraud class 1. If such a situation occurs and another user cannot occupy his legally entitled parking space, he will report it to the system. Since the report may also be false, the system must verify it. For this purpose, other users are called upon to go to this place and to name the license plate of the car in the parking lot as well. The truth of the report can be verified by comparing these results. The verifying users will receive a bonus on their balance for their service.
+\subsubsection{Verification Module} Another important security tool is the verification module. It allows the system to check who has really committed a rule violation. If a rule violation situation occurs and another user cannot occupy his legally entitled parking space, he will report it to the system. Since the report may also be false, the system must first verify who the real offender is: the reported user or the reporting user. For this purpose, other users are called upon to head to this place and to make a contribution to this case. Those users will then be called inspectors. The truth of the report can be verified by comparing the contributions of the reported user, the reporting user and the inspectors. The inspectors will receive a bonus on their balance for their service.
 
-The module works in several steps. After a message is received, potential inspectors are selected. They confirm that they will verify the report. Afterwards, they verify the report and the system evaluates the results. \\
+The module works in several steps. After a report is received, potential inspectors are selected and requested. They confirm whether they will verify the event or not. Afterwards, they verify the event and the system evaluates the contributions. \\
 
 Since the location of the inspectors must be taken into account when selecting them, users have the option of deciding whether they want to participate in the verification system or not. There are two ways for all participating users to provide the system with location information. 
 \begin{itemize}
 \item The user allows the app to retrieve GPS data from the mobile device. The GPS data is only collected if a report needs to be verified. Directly after viewing the data, it is calculated whether the user is in the area, and the GPS data is deleted again.
-\item The user selects an area on a map in which he wants to verify reports. GPS data is not necessary.
+\item The user selects an area on a map in which he generally wants to verify reports. GPS data is not necessary.
 \end{itemize}
 
-A list is created of all users that are eligible for verification. This list will now be sorted so that the users who are most suitable are at the top and users who are less suitable are at the bottom. Suitability is determined using a 'connection' score, which is calculated for all available inspector. This score indicates the independence between the inspector and the reporting and the reported user. A low score is a sign of great independence. 'connection' is a score, which represents the number of common events between the inspector and the reporting user plus the number of common events between the inspector and the reported user in the last six months. The following events increase the score between user 1 and 2 by a single point.
+A list of all users that are eligible for verification is created. This means only users who have agreed to participate in the verification system and who are either in the vicinity of the location of the event themselves or whose verifying area contains the location of the event are chosen. This list will now be sorted in a way that the users who are most suitable are at the top and users who are less suitable are at the bottom. Suitability is determined using a 'connection' score, which is calculated for all available inspector. This score indicates the independence between the inspector and the reporting and the reported user. A low score is a sign of great independence. 'connection' is a score, which represents the number of common events between the inspector and the reporting user plus the number of common events between the inspector and the reported user in a certain period of time (e.g. the last six months). The following events increment the score between user 1 and 2 by a single point.
 \begin{itemize}
-\item User 1 books a parking space with user 2.
+\item User 1 books a parking space from user 2.
 \item User 1 reports user 2.
 \item User 1 verifies a report from user 2.
 \end{itemize}
 
-Now the users from the list are asked whether they can verify this case. This request is not sent to all users at the same time. Based on the reputations score (see below) it is determined how many inspectors n are needed to solve the case and requests are sent to the first n*3 inspectors of the list.\\
+Next, the users from the list are asked whether they are able and willing to verify this event. This request is not sent to all users at the same time. Based on the reputations score (see below) it is determined how many inspectors n are needed to solve the case and requests are sent to the first n*3 inspectors of the list.\\
 
-The selected users will receive a notification on their smartphone indicating the location of the case for review. They then confirm or reject whether they want to and can perform the verification within the next 30 minutes. If a user refuses or does not respond within 15 minutes, he will be removed from the list and the next user not yet contacted will receive a request.\\
+The selected users will receive a notification on their smartphone indicating the location of the event for review. They then confirm or reject whether they are able and willing to perform the verification within the next 30 minutes. If a user refuses or does not respond within 15 minutes, he will be removed from the list and the next user not yet contacted will receive a request. After n users have accepted the request, all other requests are revoked.\\
 
-As soon as a user has accepted the request, he will receive exact information about the parking space. He then moves to the inspection point and states whether this parking space exists and which car is parked on it according to the license plate.
+As soon as a user has accepted the request, he will receive exact information about the parking space. He then moves to the inspection point and states whether this parking space exists and which car is parked on it according to the license plate.\\
 
-\subsubsection{Reputation Module} The last part of the security features is the reputation module. It stores a hidden value for each user, which is updated using the other security modules. The value indicates the trustworthiness of a user. It is needed because the system cannot always decide with certainty who is right in the event of a conflict. For example, if a scammer departs his unpaid parking space until the inspectors arrive, it cannot be decided whether it was a false report or whether the scammer has actually occupied the parking space. In such cases, this value is used to make a decision. \\
+In the last step the contributions must be evaluated. This is done using the reputation system described below. For this purpose, the reputation of both parties to the conflict is assessed. As seen down below, not the trust values of the two parties are compared, but the trust of the contributions by those parties, in which both the trust value and other parameters have an influence. These other parameters include, for example, the inspectors' contributions and the ratings the two parties have received. \\
 
-The value will always be one of five options. 'neutral' means that there is not enough information about the user to form a judgment. 'untrustworthy' means that the user has often been noticed negatively and his credibility is therefore in question. The system displays an even lower credibility towards the user with the value 'very untrustworthy'. In contrast, 'trustworthy' and 'very trustworthy' represent a high level of credibility acquired by the user. \\
+The verification module returns the user whose contribution possesses the lower trust value as the scammer. \\
 
-All other modules already mentioned are included in the calculation of the value. All events of a user are divided into positive, neutral and negative events and thus influence the reputation value. If a user is rated well (4 or 5 stars) or serves as an inspector to successfully solve a case, his score can be increased. If, on the other hand, he receives a bad rating (1 or 2 stars), is reported and convicted as a scammer, gives a false report or deceives the system as an inspector, his score can be reduced. The exact calculation works as follows: \\
+In addition to the above, the verification module asks the reported user for feedback on this case. The reported user can either confirm or contradict the report of the reporting user. This is intended as a means of self-reporting by the reported user, which can reduce his punishment and does not negatively affect his reputation score. This is a good way for a genuine user to admit inadvertent misconduct. If it does, no more inspectors need to be requested and the verification module returns the reported user as the scammer. However, even if the reported user admits the fraud with his contribution, the case is passed to the reputation module to update the reputation scores of the participating users.
 
-\subparagraph{Neutral} Users with five or less events are always rated 'neutral'.
-\subparagraph{Untrustworthy} Users with a minimum of 5 negative events among their last 20 are rated 'untrustworthy'. If less than 20 events (but more than 5) exist, users are classified as 'untrustworthy' if at least a quarter of the events are negative.
-\subparagraph{Very Untrustworthy} Users with a minimum of 10 negative events among their last 20 are rated 'untrustworthy'. If less than 20 events (but more than 5) exist, users are classified as 'untrustworthy' if at least half of the events are negative.
-\subparagraph{Trustworthy} Users among whose last 20 events are less than 5 negative are rated 'trustworthy'. If less than 20 events (but more than 5) exist, users are classified as 'trustworthy' if less than a quarter of the events are negative.
-\subparagraph{Very Trustworthy} Users with at least 20 events, of which a maximum of 2 are negative are rated 'very trustworthy'.
+\subsubsection{Reputation Module} The last part of the security features is the reputation module. It stores a hidden reputation score $R_u$ for each user $u$, which is updated using the other security modules. The value indicates the trustworthiness of a user. It is needed to decide who is right in the event of a conflict. Based on this reputation score, a separate trust value $Trust(C)$ is determined for each contribution $C$ taking other parameters into account. In all cases where the contributions of the reporting and the reported user do not match, this value is used to make a decision. \\
 
-\subsubsection{Deciding who the scammer} After receiving a report, the system must first decide who the real offender is: the reported user or the reporting user. For this purpose, the order is passed on to the verification module. The verification module sends a chronologically sorted series of verifications as a response. Once it has been received, the system can make a decision. The following options are possible:
+Our reputation module is based on the "dynamic trusted set based reputation system" (DTSRS) developed by Mousa et. al. in \cite{mousa2017reputation}. It utilizes state-of-the-art trust systems presented in \cite{mousa2015trust} and offers better evaluation results than those. DTSRS was created for use in Mobile Participatory Sensing Applications, but is also suitable for our purposes. In the following we will explain the system, our changes to it and the mapping of our parameters to those of the DTSRS. \\
 
-\subparagraph{Complete consistency} Complete consistency is the simplest of the scenarios. To declare a series of verifications as completely consistent, the first verification must always correspond to the given report. If all other inspectors also report the same incident, the system decides to acknowledge the reported user as guilty. However, complete consistency also exists if the reported event changes over the period of time, but remains logical. The verfications that follow after the first one must match over time. For example, the scammer could leave the parking lot after the first inspector. If then all the other inspectors report that the parking lot is free, it is still a consistent series.
+The reputation module uses a trust score to evaluate participants and their contributions. The trust of a contribution $Trust(C)$ is the probability that contribution $C$ is correct. The reputation score $R_u$ of a user $u$ is the synthesized probability that his contribution are and will be correct. With our shared parking system, every user can be a participant of any case, but the number changes from time to time. After all, the participants in each case are the reported user, the reporting user and all inspectors. Each participant of a case submits exactly one contribution for this case. The contributions are therefore the report by the reporting user, the confirmation or denial by the reported user and the contributions from the inspectors.\\
 
-\subparagraph{Inspector consistency} Another possibility is that although all inspectors report the same, those verfications do not match the report received. This could be because the report was a false report or because the situation changed by the time the first inspector came. The system must resolve this conflict, as described in the next section 'Resolving a Conflict'.
+After every report received by the system, $R_p$ of all participants $p$ involved in the report is updated. In addition, the trust of the contributions of the reported user and the reporting user is evaluated. The trust is updated in these five steps:
 
-\subparagraph{Inconsistency} The last possibility is that some verifications contradict each other over the temporal course. If inspector 1 and 3 have seen the same car in the parking lot, it is very unlikely that the parking lot was free at the time inspector 2 has checked it. If such inconsistencies are found, they are removed from the series and attributed to the inspector as a negative event. Furthermore, he does not receive any credit for his verification service. After the series has been cleaned up, the system will once again check what type of series it is.
+\subparagraph{Contribution Evaluation}In the first step, the contributions $C$ are evaluated and a contribution evaluation value $\theta_C $ is calculated. In our case, the contributions are the report by the reporting user, the confirmation or denial by the reported user and the contributions from the inspectors. In the original DTSRS, the values of the contributions are within a certain range. For our module we assume the special case that each of these contributions has exactly one of two values: (0) the contribution is consistent with the contribution of the reporting user or (1) the contribution is not consistent with the contribution of the reporting user. The two values occupy exactly the margins of the original range. This allows us to continue calculating in exactly the same way as the original.
 
-\subsubsection{Resolving a Conflict} If a conflict occurs, it must be resolved. This is done using the reputation system. For this purpose, the reputation values of both parties to the conflict are compared. The result of a conflict is either undecided or a victory for one party and thus a defeat for the other. The system proceeds in the following order.
+With the help of the mean of the contributions of the trusted set the module forms a ground truth and compares all contributions to it. With the help of an exponential distribution, a score between 0.37 and 1 is assigned, which corresponds to the contribution evaluation value $\theta_C $ of the contribution $C$.\\
 
-\begin{enumerate}
-\item If both parties of the conflict have the same reputation value, it is considered as undecided.
-\item If one of the two parties is classified as 'very untrustworthy', it is considered the loser of the conflict.
-\item If either party is classified as 'very trustworthy', it is considered the winner of the conflict, unless the other party is 'neutral'. In which case, the conflict is considered as undecided.
-\item In all other cases in which at least one of the two parties is classified as 'neutral', the conflict is considered as undecided.
-\item The last remaining case is between a party classified as 'trustworthy' and a party classified as 'untrustworthy'. The party classified as 'trustworthy' is considered the winner of the conflict.
-\end{enumerate}
+\textit{Hier fehlen Formeln.}
 
-\subsubsection{Dealing with fraud} With these basic systems it is now possible for the system to punish scammers and compensate the injured parties. 
+\subparagraph{Feedback Processing}In this step, the feedback each participating user received is taken into account. The module calculates a aggregated feedback score $\alpha_p$ for each participating user $p$. In DTSRS, the user can receive feedback for each contribution. There, feedback refers to exactly one contribution and is then discarded. In our system, users receive feedback through the rating module. Thus, received ratings originate not only from participant, but from all users of the shared parking system. In order to avoid using a rating more than once in the calculation of a user's reputation score, \textit{feedback processing} utilizes exactly those ratings that have been entered since the user's reputation score was last updated. For the calculations, the ratings $F_r(p)$ (1 to 5 stars) of a participant $p$ given by rating user $r$ are normalized to the range [0,1]. Only ratings of users $r$ whose reputation score is greater than that of the rated participant $p$ are used ($R_r>R_p$). The individual ratings are weighted according to the reputation score of the rating user and the average is calculated, which also falls within the range [0,1]. The following equations describe the calculation, where $F$ is the number of rating users for each participant and $FH$ the number of rating users whose reputation score is higher than the reputation score of the rated user.
+\begin{equation}
+  F_{r,Eval}(p)=F_r(p)*R_q\; \forall r \in 1,2,...F, where\; R_r>R_p 
+\end{equation}
+\begin{equation}
+  \alpha_p = \frac{\sum_{r=1}^{r=FH}F_{r,Eval}(p)}{FH}
+\end{equation}
+
+\subparagraph{A Temporal Proximity Factor} In DTSRS, the proximity factor measures the distance between the participant and the sensing area, as a larger distance is more likely to result in inaccurate measurements. In our shared parking system, the distance has no influence on the measurements, as anyone making a contribution must be at the location of the event. Instead, however, the temporal distance $\beta_p$ has an effect on the measurements, because the more time passes, the greater the probability that the situation at the location of the event will change, which results in inaccurate measurements. For this reason, we are dealing with a temporal proximity factor $\sigma_p$ in the range [0,1], which is calculated using an inverse Gompertz function from the temporal distance. For the reported and reporting user the temporal distance is 0 and the proximity factor is therefore maximum at 1. For every other participant $\beta_p$ describes the distance between the report and the participant's contribution in minutes.
+\begin{equation}
+  \sigma_p = 1 - a * e^{-be^{-c\beta_p}}
+\end{equation}
+
+\subparagraph{Trust Mapping} The trust of a contribution $Trust(C)$ is calculated exactly as with DTSRS. We take a weighting $\sum_{i_1}^{4} W_i = 1$, the three already calculated values contribution evaluation $\theta_p$, aggregated feedback $\alpha_p$ and the temporal proximity factor $\sigma_p$ and as a fourth value the reputation score $R_p$ of the participant $p$ and calculate the weighted average of these four values:
+\begin{equation}
+  Trust(C) = W_1 * \theta_p +W_2 *  \alpha_p +W_3 *  \sigma_p +W_4 *  R_p
+\end{equation}
+The reputation score of a new participant is first set to 0, meaning he or she must first earn the trust of the system.
+
+\subparagraph{Reputation Update} When updating the reputations value of a participant $p$, DTSRS only uses the contribution evaluation $\theta_p$ and not the complete trust $Trust(C)$ of his contribution. The reason for this is that the proximity factor $\sigma_p$ cannot be influenced by the user and does not depend on the genuineness of the user. This value is also not included in the calculation in our module, as users further away from the location of the event take more time to reach it, regardless of whether they are malicious or genuine.
+
+The new reputation value $R\prime\prime$, as we can see in a moment, will be calculated on the basis of the old reputation value $R_p$ anyway. If we would use $Trust(C)$ for the calculation, $R_p$ would therefore have an impact two times. Mousa et. al. also argue that with the omission of $R_p$ recent behaviour has a direct influence on the reputation score.
+
+However, they do not provide any reason why agregated feedback $\alpha_p$ should not be included in the reputation update. Since the feedback in our system is independent of the individual contributions, but clearly provides a indication about the trustworthiness of a user, we will include it.\\
+
+We update the reputation value consecutively with the contributions evaluation $\theta_p$  and the aggregated feedback $\alpha_p$. For both values there is a threshold $\tau_\theta$ and $\tau_\alpha$. If the previously calculated $\theta_p$ or $\alpha_p$ of a participant $p$ is higher than $\tau_\theta$ or $\tau_\alpha$, the reputation value is increased by $e_{r,\theta}$ or $e_{r,\alpha}$. If it is lower, the reputation value is decreased by $e_{p,\theta}$ or $e_{p,\alpha}$. $e_{p,\theta}>e_{r,\theta}$ and $e_{p,\alpha}>e_{r,\alpha}$ applies to punish attackers more severely. The update is described by the following equations: 
+\begin{equation}
+  R\prime_p = \begin{cases} R_p + e_{r,\theta}\quad if\; \theta_p>=\tau_\theta \\ R_p - e_{p,\theta}\quad if\; \theta_p<\tau_\theta \end{cases}
+\end{equation}
+\begin{equation}
+  R\prime\prime_p = \begin{cases} R\prime + e_{r,\alpha}\quad if\; \alpha>=\tau_\alpha \\ R\prime - e_{p,\alpha}\quad if\; \alpha<\tau_\alpha \end{cases}
+\end{equation}
+
+If the value is above 1 or below 0 after the update, it is reset to the corresponding value (1 or 0).
+
+\subsubsection{Sanctioning and Compensation} With these basic systems it is now possible for the system to punish scammers and compensate the injured parties. 
 
 After a report has been received, the reporting user will first be provided with a new parking space, regardless of whether it later turns out that he was in fact the fraudster. For this purpose, the system selects the nearest parking space available for the entire duration of the reservation of the original parking space. The system now books this parking space for the reporting user, takes over the costs, and sends the information about it to his smartphone. The System however, will not pay the price which is officially offered for the replacement parking space, but will instead pay the average price of parking spaces in the area. This is calculated as the average price of all bookings of the last x months in a maximum distance of y kilometers. On registration, all users agree to make their parking space available as a replacement parking space for the average parking fee, if required. The reporting user can now use the replacement parking space and the owner of the replacement parking space will be fairly remunerated.
 
-After a replacement parking space has been provided, the already explained modules and methods are used to determine who the scammer is.
+After a replacement parking space has been provided, the already explained verification and reputation modules are used to determine who the scammer is.
 
-If a definite perpetrator is identified, he will be punished. The punishment of fraudsters is primarily enforced by a fine. The penalty will be deducted from his credit balance. This penalty will also be used to cover the costs of the fraud. Costs arise on the one hand when compensating the injured party and on the other hand when paying the inspectors. The penalty is calculated from the sum of the inspectors' credit bonuses and the remuneration of the landlord of the replacement car park. Thus there are no costs for the system when the offender is successfully identified. 
-
-However, if it is not clearly determined who the fraudster is, the system must bear the costs itself. We will show later that this occurs only in a small number of cases.
+After the real offender is identified, he will be punished. The punishment of fraudsters is primarily enforced by a fine. The penalty will be deducted from his credit balance. This penalty will also be used to cover the costs of the fraud. Costs arise on the one hand when compensating the injured party and on the other hand when paying the inspectors. The penalty is calculated from the sum of the inspectors' credit bonuses and the remuneration of the landlord of the replacement car park. Thus there are no costs for the system when the offender is successfully identified.
 
 \subsubsection{Example}
 Figure \ref{img:example-grafik} on page \pageref{img:example-grafik} shows fraud within the system and how to deal with it. The procedure is explained in more detail below.\\
@@ -524,38 +600,43 @@ User 1 has booked a parking space in advance that belongs to user 2. He's alread
  
 Of course, it is also conceivable that user 3 has not occupied the parking space at all, but user 1 still reports him. In this case, the verifiers will report that the parking space is actually free. Now the system penalizes user 1 with a sum that covers the costs for the newly allocated parking space (of user 4) and the costs for the verifying users.\\
 
-Another possibility is that user 3 has actually occupied the parking lot but has already left until the users arrive for verification. In this case, like above, the system would identify user 1 as the scammer, although user 3 violated the rules. It also imposes the fine on User 1. He now has the opportunity to challenge the fine. If he does, the confidence score comes into play. If both users are new users or neither of them has a particularly bad or good score, no fair decision can really be made and the costs incurred are borne by the system. In all other cases, when one user is clearly more trustworthy than another, the system decides in favour of the more trustworthy user.
+Another possibility is that user 3 has actually occupied the parking lot but has already left until the users arrive for verification. In this case, like above, the system would identify user 1 as the scammer, although user 3 violated the rules. It also imposes the fine on User 1. He now has the opportunity to challenge the fine. If he does, the confidence score comes into play. If both users are new users or neither of them has a particularly bad or good score, no fair decision can really be made and the costs incurred are borne by the system. In all other cases, when one user is clearly more trustworthy than another, the system decides in favor of the more trustworthy user.
 
 
 \section{Security Analysis}
 In the following, the design of the system is evaluated using the security features set up in the requirement analysis. We look at each point individually. But first we will note a few premise that we believe apply to our system. They will help us perform the security analysis.
-
-\subparagraph{Extensive system} We assume that our system has a large supply and demand. One reason for this is that it is more attractive than other systems, for example because you are compensated as an injured party. Other aspects that can be implemented to achieve this are discussed in the section 'Implementation'.
-
-\subparagraph{Sufficient inspectors} We assume that there are always sufficient inspectors available. The system will be used in places where there are too many cars but too few parking spaces, i.e. in areas with a high population density. As long as the bonus credit for inspectors is reasonably fair, there will always be enough users to do it. In addition, you don't even have to use the app yourself to participate as an inspector. An example of this would be a student who only travels by bicycle but would like to earn a few euros here and there.
-
-\subparagraph{Sufficient parking spaces} We assume that there are always enough parking spaces available for compensation. If the system has low occupancy levels, a suitable free parking space can always be found. If this is not the case, there will always be landlords in larger systems who offer their parking spaces for a particularly expensive price. These places will still be vacant even in situations where almost all capacities are occupied. These are parking spaces that are still available for use as compensation for injured parties, even when there is a high level of occupancy. 
-
-\subparagraph{Fraud is an exception} We assume that fraud in our system is an exception and that most actions are carried out according to the rules. One reason for this is that the majority of people are genuine, especially when they know that offences are being punished hard. We also offer an opportunity to report inadvertent misdemeanours by yourself, in order to prevent major penalties. This also prevents inadvertent misdemeanors by genuine users.\\
 
 Without established data and numbers on fraud in our system, we cannot work with probabilities or the like to show that our design meets the specified requirements. As far as possible, we will therefore work without such data. In places where this is no longer sufficient, we will show that the error probability of our methods approaches 0 with increasing size of the system.
 
 \subsection{Fraud Detection}
 Fraud detection includes the simple recognition of fraud as well as the ability to correctly identify the scammer.  \\
 
-Fraud recognition is exclusively achieved by the report system. As soon as a user detects a rule violation, he can report it and the system is informed. It is sufficient to recognize fraud by which another party would be harmed, because this would not be any different without the Shared Parking System. A parking offence only causes problems if another user, who is authorized to park, wants to park on it and with our system the other user now has the ability to report it. Thus, parking spaces with a shared parking system always provide a better possibility for fraud detection than without it. \\
+\subparagraph{Fraud recognition} Fraud recognition is exclusively achieved by the report system. As soon as a user detects a rule violation, he can report it and the system is informed. It is sufficient to recognize fraud by which another party would be harmed, because this would not be any different without the Shared Parking System. A parking offence only causes problems if another user, who is authorized to park, wants to park on it and with our system the other user now has the ability to report it. Thus, parking spaces with a shared parking system always provide a better possibility for fraud detection than without it. \\
 
-The ability to correctly identify the fraudster is provided by the verification and reputations system. 
+\subparagraph{Scammer identification}The ability to correctly identify the scammer is provided by the verification and reputation module. \\
 
-\textbf{The following is still early work in progress.}
+First, we show that our reputation module can generally distinguish between malicious and genuine users, while also defending itself against the attacks from class 2.
 
-First, we show that in most cases the verification system alone is sufficient to identify the fraudster.
+Our module is based on the DTSRS from \cite{mousa2017reputation}, in which Mousa et. al experimentally evaluated their system using different simulations and obtained the following results. They showed that their system "accurately assesses the quality of participants' contributions" and "clearly identifies adversaries even if the number of colluding adversaries reaches 60\% of the total number of participants" and furthermore defends itself against corruption, On-Off and collusion attacks. \\
 
-In order to identify a scammer who illegally occupies a car park (class 1 fraud), it is sufficient that one inspector proves that this user is parked in the parking space. Since we assume an extensive system with sufficient inspectors, the first inspectors can be at the site of the event within minutes. It is unlikely that the scammer will leave the parking lot by then. \\
+Since we only map our system parameters to the parameters of Participatory Sensing in our module, we can adopt the evalutation and the resulting properties of DTSRS. In our assumptions we also expect to reach a maximum attacker percentage of 50\% in our system and thus remain below the 60\% with which DTSRS can still successfully deal with. Our module can either fend off attacks on a reputation system presented in the attacker model or mitigate them in the environment of our system in some other way.
 
-We show that an genuine user is not identified by the system as a fraudster.
+\begin{enumerate}
+\item \textbf{Corruption attack:} In \cite{mousa2017reputation} it was shown that DTSRS and thus also our reputation module can defend itself against corruption attack.
+\item \textbf{On-off attack:} In \cite{mousa2017reputation} it was shown that DTSRS and thus also our reputation module can defend itself against on-off attack.
+\item \textbf{Re-entry attack:} As Mousa et. al. states in \cite{mousa2015trust} "this attack was not considered by any of the current reputation based trust systems in participatory sensing" and thus no automated solution has been found in state-of-the-art reputation systems. If we want to protect our system against this type of fraud, we could add a manual function: the registration credential information would have to be checked manually either in general during registration  (for example, with proof of identity card) or during registration of a user's license plate (in cooperation with the authorities). This ensures that people can only register with their real identity and thus only once.
+\item \textbf{Collusion attack:} In \cite{mousa2017reputation} it was shown that DTSRS and thus also our reputation module can defend itself against collusion attack.
+\item \textbf{Sybil attack:} For the sybil attack the same applies as for the re-entry attack.
+\item \textbf{Reputation lag exploitation:} In our system there is a time interval between the individual events of a user which cannot be influenced by the user himself. For malicous behavior as inspector, the user must first be selected as such. If parking spaces are blocked, the system is only informed when the user is reported, etc. It is not possible for a user to launch a large number of attacks in a very short time. Thus, the results of a fraud are already accounted for in the reputation score of the user when the next fraud case is evaluated.
+\item \textbf{GPS spoofing attacks:} We do not use gps functions when receiving data because we already know the position of an event. If an inspector checks a fraud case, it is a parking space that is not available. The system already knows the position of this parking space. If an inspector does not travel to the location of the incident and simply guesses a result of his verification, it is called a corruption attack.
+\item \textbf{Unfair ratings:} In the step "feedback processing" in \cite{mousa2017reputation} methods were implemented to mitigate the effect of an unfair rating attack.
+\item \textbf{Bath mouthing or negative discrimination attack:} "Bad mouthing [...] attacks are not addressed by any of existing trust systems in participatory sensing" is explained in \cite{mousa2015trust}. However, the effect of this attack is also mitigated in our system. In contrast to DTSRS and Participatory Sensing, not every user can constantly give feedback in our system. To rate another user, you must first book or rent a parking space. While renting out one cannot freely choose the target of his bad mouthing attack. While renting one has to pay the parking price for every single rating he'd like to issue. In addition, the ratings of each individual user are publicly available and other users can easily recognize if the attacker discriminates against individual users. In addition, users who are unfairly rated badly will also return a bad rating in most cases.
+\item \textbf{Ballot stuffing or positive discrimination attack:} Ballot stuffing is similar to bad mouthing. Even if two users always rate each other highly, fees must be paid to the operator for each related rental transaction.
+\end{enumerate}
 
-Since we have no fixed figures and data to calculate, we can only estimate that it is very unlikely that the above will occur. Each user starts with the reputation value'neutral'. 
+Because the reputation module can correctly distinguish between malicious and genuine users and it is used to check each report, we can decide whether the reporting or the reported user is the scammer. The trust of a contribution used for this is actually better than simply comparing the trust scores of the conflicting users, since in addition to the trust score, the contributions of the other users for this event and the proximity factor are also included there. \\
+
+As shown, the module recognizes the scammers of class 1 cases (reported user is a scammer) and recognizes and protects itself against class 2 cases. The exceptional cases of class 3 are briefly discussed below: 
 
 
 \subsection{Fraud Punishment}

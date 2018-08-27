@@ -1,11 +1,10 @@
-package com.example.shared_parking;
+package com.example.shared_parking.activities.parkingspots;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.android.volley.VolleyError;
+import com.example.shared_parking.R;
+import com.example.shared_parking.networking.NetworkUtilities;
+import com.example.shared_parking.networking.ServerCallback;
 
 import org.json.JSONObject;
 import org.json.*;
-
-import java.net.InterfaceAddress;
 
 public class SpotsAddFragment extends Fragment implements View.OnClickListener {
     private EditText PostCode, City, Street, Number, Lat, Lng;

@@ -1,8 +1,10 @@
-package com.example.shared_parking;
+package com.example.shared_parking.roomdatabase;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+
+import com.example.shared_parking.roomdatabase.ParkingSpace;
 
 import java.util.List;
 

@@ -1,10 +1,9 @@
-package com.example.shared_parking;
+package com.example.shared_parking.activities.main;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.example.shared_parking.R;
+import com.example.shared_parking.networking.NetworkUtilities;
+import com.example.shared_parking.networking.ServerCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;

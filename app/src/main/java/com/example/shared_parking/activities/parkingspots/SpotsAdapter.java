@@ -1,22 +1,18 @@
-package com.example.shared_parking;
+package com.example.shared_parking.activities.parkingspots;
 
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.json.JSONArray;
+import com.example.shared_parking.R;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.LinkedList;
 import java.util.List;
 
 class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
@@ -82,11 +78,11 @@ class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
         public ViewHolder(View view) {
             super(view);
             Log.e(TAG, "create ViewHolder");
-            postCode = (TextView) view.findViewById(R.id.list_spots_postCode);
+            postCode = (TextView) view.findViewById(R.id.list_offers_parkingspaceid_text);
             city = (TextView) view.findViewById(R.id.list_spots_city);
-            street = (TextView) view.findViewById(R.id.list_spots_street);
+            street = (TextView) view.findViewById(R.id.list_offers_startdt_text);
             number = (TextView) view.findViewById(R.id.list_spots_number);
-            lat = (TextView) view.findViewById(R.id.list_spots_lat);
+            lat = (TextView) view.findViewById(R.id.list_offers_enddt);
             lng = (TextView) view.findViewById(R.id.list_spots_lng);
             edit = (ImageButton) view.findViewById(R.id.ib_spots_edit);
             delete = (ImageButton) view.findViewById(R.id.ib_spots_delete);
@@ -113,10 +109,4 @@ class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
              */
         }
     }
-
-
-
-
-
-
 }

@@ -30,6 +30,21 @@ Oanh Tran~Thi Kim, Nguyen~Dang Tri, Vandung Nguyen, Nguyen~H. Tran, and
 \newblock {\em 2015 17th Asia-Pacific Network Operations and Management
   Symposium (APNOMS)}, pages 321--326, 2015.
 
+\bibitem{mousa2017reputation}
+Hayam Mousa, Sonia Benmokhtar, Omar Hasan, Lionel Brunie, Osama Younes, and
+  Mohiy Hadhoud.
+\newblock A reputation system resilient against colluding and malicious
+  adversaries in mobile participatory sensing applications.
+\newblock In {\em The 14th Annual IEEE Consumer Communications \& Networking
+  Conference (CCNC 2017)}, 2017.
+
+\bibitem{mousa2015trust}
+Hayam Mousa, Sonia~Ben Mokhtar, Omar Hasan, Osama Younes, Mohiy Hadhoud, and
+  Lionel Brunie.
+\newblock Trust management and reputation systems in mobile participatory
+  sensing applications: A survey.
+\newblock {\em Computer Networks}, 90:49--73, 2015.
+
 \bibitem{shaheen2005smart}
 Susan Shaheen.
 \newblock Smart parking management field test: A bay area rapid transit (bart)

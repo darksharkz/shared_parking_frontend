@@ -4,10 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -19,11 +15,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.example.shared_parking.activities.main.MainActivity;
+import com.example.shared_parking.activities.parkingoffer.OffersActivity;
+import com.example.shared_parking.activities.parkingspots.SpotsActivity;
+import com.example.shared_parking.activities.search.SearchActivity;
+import com.example.shared_parking.networking.NetworkUtilities;
+import com.example.shared_parking.networking.ServerCallback;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -68,7 +68,7 @@ public class BaseActivity extends AppCompatActivity
                         JSONObject userjson = result.getJSONObject("result");
                         Name.setText(userjson.getString("firstname") + " " + userjson.getString("lastname"));
                         Mail.setText(userjson.getString("mail"));
-                        Balance.setText(Double.toString((double)(userjson.getInt("balance")/100)) + " €");
+                        Balance.setText(Double.toString((double)((double)userjson.getInt("balance")/100)) + " €");
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -145,7 +145,17 @@ public class BaseActivity extends AppCompatActivity
         } else if (id == R.id.nav_report) {
             Intent intent = new Intent(this, ReportActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_logout) {
+            // Delete auth_token
+            SharedPreferences sharedPref = this.getSharedPreferences("key", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("auth_token", "");
+            editor.commit();
+            // Open log in screen
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
+
 
 
         return true;

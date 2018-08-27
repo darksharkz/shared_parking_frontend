@@ -1,4 +1,4 @@
-package com.example.shared_parking;
+package com.example.shared_parking.roomdatabase;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

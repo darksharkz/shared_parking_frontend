@@ -1,4 +1,4 @@
-package com.example.shared_parking;
+package com.example.shared_parking.activities.parkingspots;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +17,10 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.example.shared_parking.activities.main.MainActivity;
+import com.example.shared_parking.R;
+import com.example.shared_parking.networking.NetworkUtilities;
+import com.example.shared_parking.networking.ServerCallback;
 
 import org.json.JSONArray;
 import org.json.JSONException;

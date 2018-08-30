@@ -18,7 +18,7 @@ import java.util.HashMap;
  */
 final public class NetworkUtilities {
     /** Base URL for the Shared Parking REST API Service */
-    public static final String BASE_URL = "http://betreffilada.de:777/shared_parking";
+    public static final String BASE_URL = "http://localhost:777/shared_parking";
 
     /** URI for signup service */
     public static final String REGISTER_URI = BASE_URL + "/user/register";

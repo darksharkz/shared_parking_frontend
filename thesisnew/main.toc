@@ -20,68 +20,70 @@
 \contentsline {section}{\numberline {3.1}High-level Overview}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}System Model}{10}{section.3.2}
 \contentsline {section}{\numberline {3.3}Functional Requirements}{10}{section.3.3}
-\contentsline {subparagraph}{\nonumberline Low deployment cost and of the shelf hardware}{11}{section*.14}
-\contentsline {subparagraph}{\nonumberline Automatic Processing}{11}{section*.15}
-\contentsline {subparagraph}{\nonumberline Streichen: Neutral Balance}{11}{section*.16}
-\contentsline {subparagraph}{\nonumberline More to come}{11}{section*.17}
-\contentsline {section}{\numberline {3.4}Adversary Model and Assumptions}{11}{section.3.4}
-\contentsline {section}{\numberline {3.5}Adversary Model and Classes of Fraud}{11}{section.3.5}
-\contentsline {subparagraph}{\nonumberline Class 1}{12}{section*.18}
-\contentsline {subparagraph}{\nonumberline Class 2}{12}{section*.19}
-\contentsline {subparagraph}{\nonumberline Class 3}{13}{section*.20}
-\contentsline {section}{\numberline {3.6}Assumptions}{13}{section.3.6}
-\contentsline {subparagraph}{\nonumberline Attacker collaboration}{13}{section*.21}
-\contentsline {subparagraph}{\nonumberline Sufficient parking spaces}{13}{section*.22}
-\contentsline {subparagraph}{\nonumberline Majority assumption}{14}{section*.23}
-\contentsline {section}{\numberline {3.7}Security Requirements}{14}{section.3.7}
-\contentsline {subparagraph}{\nonumberline Fraud Prevention}{14}{section*.24}
-\contentsline {subparagraph}{\nonumberline Fraud Detection}{14}{section*.25}
-\contentsline {subparagraph}{\nonumberline Fraud Punishment}{14}{section*.26}
-\contentsline {subparagraph}{\nonumberline Fraud Compensation}{14}{section*.27}
+\contentsline {subparagraph}{\nonumberline Low deployment cost and of the shelf hardware}{11}{section*.15}
+\contentsline {subparagraph}{\nonumberline Automatic Processing}{12}{section*.16}
+\contentsline {subparagraph}{\nonumberline Basic functions}{12}{section*.17}
+\contentsline {subparagraph}{\nonumberline Search function via a map}{12}{section*.18}
+\contentsline {section}{\numberline {3.4}Adversary Model and Assumptions}{12}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Adversary Model and Classes of Fraud}{12}{subsection.3.4.1}
+\contentsline {subparagraph}{\nonumberline Class 1}{12}{section*.19}
+\contentsline {subparagraph}{\nonumberline Class 2}{13}{section*.20}
+\contentsline {subparagraph}{\nonumberline Class 3}{13}{section*.21}
+\contentsline {subsection}{\numberline {3.4.2}Assumptions}{14}{subsection.3.4.2}
+\contentsline {subparagraph}{\nonumberline Attacker collaboration}{14}{section*.22}
+\contentsline {subparagraph}{\nonumberline Sufficient parking spaces}{14}{section*.23}
+\contentsline {subparagraph}{\nonumberline Majority assumption}{14}{section*.24}
+\contentsline {section}{\numberline {3.5}Security Requirements}{14}{section.3.5}
+\contentsline {subparagraph}{\nonumberline Fraud Prevention}{15}{section*.25}
+\contentsline {subparagraph}{\nonumberline Fraud Detection}{15}{section*.26}
+\contentsline {subparagraph}{\nonumberline Fraud Punishment}{15}{section*.27}
+\contentsline {subparagraph}{\nonumberline Fraud Compensation}{15}{section*.28}
 \contentsline {chapter}{\numberline {4}Design}{17}{chapter.4}
 \contentsline {section}{\numberline {4.1}Functional features}{17}{section.4.1}
-\contentsline {subparagraph}{\nonumberline User registration}{17}{section*.28}
-\contentsline {subparagraph}{\nonumberline Balance system}{17}{section*.29}
-\contentsline {subparagraph}{\nonumberline Parking Space management}{17}{section*.30}
-\contentsline {subparagraph}{\nonumberline Renting out a parking space}{18}{section*.31}
-\contentsline {subparagraph}{\nonumberline Renting a parking space}{18}{section*.32}
-\contentsline {subparagraph}{\nonumberline More to come}{18}{section*.33}
+\contentsline {subparagraph}{\nonumberline User registration}{17}{section*.29}
+\contentsline {subparagraph}{\nonumberline User login}{17}{section*.30}
+\contentsline {subparagraph}{\nonumberline Balance system}{17}{section*.31}
+\contentsline {subparagraph}{\nonumberline Parking Space management}{17}{section*.32}
+\contentsline {subparagraph}{\nonumberline Renting out a parking space}{18}{section*.33}
+\contentsline {subparagraph}{\nonumberline Car management}{18}{section*.34}
+\contentsline {subparagraph}{\nonumberline Renting a parking space}{18}{section*.35}
+\contentsline {subparagraph}{\nonumberline Contracts Management}{18}{section*.36}
 \contentsline {section}{\numberline {4.2}Security features}{18}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Rating Module}{18}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Reporting Module}{18}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Reporting Module}{19}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Verification Module}{19}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Reputation Module}{20}{subsection.4.2.4}
-\contentsline {subparagraph}{\nonumberline Contribution Evaluation}{21}{section*.34}
-\contentsline {subparagraph}{\nonumberline Feedback Processing}{22}{section*.35}
-\contentsline {subparagraph}{\nonumberline A Temporal Proximity Factor}{22}{section*.36}
-\contentsline {subparagraph}{\nonumberline Trust Mapping}{23}{section*.37}
-\contentsline {subparagraph}{\nonumberline Reputation Update}{23}{section*.38}
+\contentsline {subsection}{\numberline {4.2.4}Reputation Module}{21}{subsection.4.2.4}
+\contentsline {subparagraph}{\nonumberline Contribution Evaluation}{21}{section*.37}
+\contentsline {subparagraph}{\nonumberline Feedback Processing}{22}{section*.38}
+\contentsline {subparagraph}{\nonumberline A Temporal Proximity Factor}{23}{section*.39}
+\contentsline {subparagraph}{\nonumberline Trust Mapping}{23}{section*.40}
+\contentsline {subparagraph}{\nonumberline Reputation Update}{23}{section*.41}
 \contentsline {subsection}{\numberline {4.2.5}Sanctioning and Compensation}{24}{subsection.4.2.5}
 \contentsline {subsection}{\numberline {4.2.6}Example}{24}{subsection.4.2.6}
 \contentsline {chapter}{\numberline {5}Security Analysis}{27}{chapter.5}
 \contentsline {section}{\numberline {5.1}Fraud Detection}{27}{section.5.1}
-\contentsline {subparagraph}{\nonumberline Fraud recognition}{27}{section*.40}
-\contentsline {subparagraph}{\nonumberline Adversary identification}{27}{section*.41}
+\contentsline {subparagraph}{\nonumberline Fraud recognition}{27}{section*.43}
+\contentsline {subparagraph}{\nonumberline Adversary identification}{27}{section*.44}
 \contentsline {section}{\numberline {5.2}Fraud Punishment}{29}{section.5.2}
-\contentsline {section}{\numberline {5.3}Fraud Prevention}{29}{section.5.3}
+\contentsline {section}{\numberline {5.3}Fraud Prevention}{30}{section.5.3}
 \contentsline {section}{\numberline {5.4}Fraud Compensation}{30}{section.5.4}
 \contentsline {chapter}{\numberline {6}Implementation}{31}{chapter.6}
 \contentsline {section}{\numberline {6.1}Database}{31}{section.6.1}
-\contentsline {subparagraph}{\nonumberline Instructions for use}{32}{section*.42}
-\contentsline {section}{\numberline {6.2}Java Web Service}{32}{section.6.2}
-\contentsline {subparagraph}{\nonumberline Instructions for use}{33}{section*.43}
-\contentsline {section}{\numberline {6.3}Java Android App}{33}{section.6.3}
-\contentsline {subparagraph}{\nonumberline Instructions for use}{35}{section*.44}
-\contentsline {section}{\numberline {6.4}Comments on the realization of the $SPS$}{35}{section.6.4}
-\contentsline {subparagraph}{\nonumberline Creation of a basic user structure}{35}{section*.45}
-\contentsline {subparagraph}{\nonumberline Solution for adversaries not registered in the system}{35}{section*.46}
-\contentsline {chapter}{\numberline {7}Future Work}{37}{chapter.7}
-\contentsline {subparagraph}{\nonumberline Using Trusted Platform Modules as Trust System for the $SPS$}{37}{section*.47}
-\contentsline {subparagraph}{\nonumberline Extending the functionality of the app}{37}{section*.48}
-\contentsline {subparagraph}{\nonumberline Testing the usability of the app}{37}{section*.49}
-\contentsline {subparagraph}{\nonumberline Testing the performance of the app}{37}{section*.50}
-\contentsline {subparagraph}{\nonumberline Proving the profitability of the $SPS$}{37}{section*.51}
-\contentsline {chapter}{\numberline {8}Conclusion}{39}{chapter.8}
-\contentsline {chapter}{\numberline {9}Acknowledgments}{41}{chapter.9}
-\contentsline {chapter}{Bibliography}{43}{section*.52}
+\contentsline {subparagraph}{\nonumberline Instructions for use}{33}{section*.47}
+\contentsline {section}{\numberline {6.2}Java Web Service}{33}{section.6.2}
+\contentsline {subparagraph}{\nonumberline Instructions for use}{34}{section*.48}
+\contentsline {section}{\numberline {6.3}Java Android Prototype}{34}{section.6.3}
+\contentsline {subparagraph}{\nonumberline Instructions for use}{36}{section*.51}
+\contentsline {section}{\numberline {6.4}Comments on the realization of the $SPS$}{36}{section.6.4}
+\contentsline {subparagraph}{\nonumberline Creation of a basic user structure}{36}{section*.52}
+\contentsline {subparagraph}{\nonumberline Solution for adversaries not registered in the system}{38}{section*.53}
+\contentsline {chapter}{\numberline {7}Future Work}{39}{chapter.7}
+\contentsline {subparagraph}{\nonumberline Using Trusted Platform Modules as Trust System for the $SPS$}{39}{section*.54}
+\contentsline {subparagraph}{\nonumberline Extending the functionality of the prototype}{39}{section*.55}
+\contentsline {subparagraph}{\nonumberline Testing the usability of the app}{39}{section*.56}
+\contentsline {subparagraph}{\nonumberline Testing the performance of the app}{39}{section*.57}
+\contentsline {subparagraph}{\nonumberline Proving the profitability of the $SPS$}{40}{section*.58}
+\contentsline {chapter}{\numberline {8}Conclusion}{41}{chapter.8}
+\contentsline {chapter}{\numberline {9}Acknowledgments}{43}{chapter.9}
+\contentsline {chapter}{Bibliography}{45}{section*.59}
 \babel@toc {ngerman}{}

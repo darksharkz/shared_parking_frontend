@@ -39,8 +39,20 @@ M.~Fraifer and M.~Fernstr{\"o}m, ``Investigation of smart parking systems and
   Information Systems. IoT Smart City Challenges Applications (ISCA 2016),
   Dublin, Ireland}, 2016, pp. 1--14.
 
+\bibitem[FS14]{freese2014shared}
+\BIBentryALTinterwordspacing
+C.~Freese and A.~T. Schönberg, ``Shared mobility: How new businesses are
+  rewriting the rules of the private transportation game,'' 2014. [Online].
+  Available:
+  \url{https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&ved=2ahUKEwjVpPfejZTdAhWx-ioKHUf2B8QQFjACegQICBAC&url=https%3A%2F%2Fwww.rolandberger.com%2Fpublications%2Fpublication_pdf%2Froland_berger_tab_shared_mobility_1.pdf&usg=AOvVaw2i6bIC93yp46vpWRIIcT8u}
+\BIBentrySTDinterwordspacing
+
 \bibitem[fTP14]{itdp2014shared}
+\BIBentryALTinterwordspacing
 I.~for Transportation and D.~Policy, ``What is shared parking?'' 2014.
+  [Online]. Available:
+  \url{https://www.itdp.org/wp-content/uploads/2014/12/Shared-Parking_ITDP.pdf}
+\BIBentrySTDinterwordspacing
 
 \bibitem[ILT{\etalchar{+}}09]{idris2009car}
 M.~I. Idris, Y.~Leng, E.~Tamil, N.~Noor, Z.~Razak \emph{et~al.}, ``Car park
@@ -48,7 +60,10 @@ M.~I. Idris, Y.~Leng, E.~Tamil, N.~Noor, Z.~Razak \emph{et~al.}, ``Car park
   \emph{Information Technology Journal}, vol.~8, no.~2, pp. 101--113, 2009.
 
 \bibitem[Ins15]{vtpi2015shared}
-V.~T.~P. Institute, ``Shared parking,'' 2015.
+\BIBentryALTinterwordspacing
+V.~T.~P. Institute, ``Shared parking,'' 2015. [Online]. Available:
+  \url{http://www.vtpi.org/tdm/tdm89.htm}
+\BIBentrySTDinterwordspacing
 
 \bibitem[KTN{\etalchar{+}}15]{Kim2015ASP}
 O.~T.~T. Kim, N.~D. Tri, V.~Nguyen, N.~H. Tran, and C.~S. Hong, ``A shared

@@ -13,7 +13,7 @@ First, we show that our reputation module can generally distinguish between mali
 
 Our module is based on the DTSRS from \cite{mousa2017reputation}, in which Mousa et. al experimentally evaluated their system using different simulations and obtained the following results. They showed that their system "accurately assesses the quality of participants' contributions" and "clearly identifies adversaries even if the number of colluding adversaries reaches 60\% of the total number of participants" and furthermore defends itself against corruption, On-Off and collusion attacks. \\
 
-Since we only map our system parameters to the parameters of Participatory Sensing, we can adopt the evaluation and the resulting properties of DTSRS. We assume that the majority of users in our system are non-malicious (\ref{}), which means an adversary or a collaboration of adversaries can control at maximum 50\% of users. This remains below the 60\% with which DTSRS can still successfully deal with. In the following we discuss how the $SPS$ can either fend off attacks on a reputation system presented in the adversary model or mitigate them in the environment of our system in some other way.
+Since we only map our system parameters to the parameters of Participatory Sensing, we can adopt the evaluation and the resulting properties of DTSRS. We assume that the majority of users in our system are non-malicious (\ref{sec:Assumptions}), which means an adversary or a collaboration of adversaries can control at maximum 50\% of users. This remains below the 60\% with which DTSRS can still successfully deal with. In the following we discuss how the $SPS$ can either fend off attacks on a reputation system presented in the adversary model or mitigate them in the environment of our system in some other way.
 
 \begin{enumerate}
 \item \textbf{Corruption attack:} DTSRS was shown to be resiliant to the corruption attack, and our system inherits this property from DTSRS.
@@ -32,6 +32,11 @@ Because the reputation module can correctly distinguish between malicious and ge
 
 As shown, the module recognizes the adversaries of class 1 cases (reported user is a adversary) and recognizes and protects itself against class 2 cases. The exceptional cases of class 3 are briefly discussed below: 
 
+\begin{itemize}
+\item If an adversary rents out a parking space that he doesn't own, it might happen that the tenant is reported or even towed off from this parking space. Thus, either the $SPS$ or the towing service documents all processes. The $SP$ is then able to check which parking space was rented by whom and from which parking space the user was reported or towed away. On the basis of this information he can ask the adversary for a proof that the parking space rented by him is really on his ground. It will turn out that this is not the case and the adversary can be fined.
+\item Since a parking space is paid directly upon booking and only a part of the price is refunded when canceling, a user cannot reserve, thus block a parking space and cancel the booking before the renting time starts for free.
+\end{itemize}
+
 
 \section{Fraud Punishment}
 The ability of fraud punishment is based on the ability of fraud detection. If a adversary is correctly identified, the system is able to penalize him. By registering, users have agreed to the rules of the system and can therefore be fined if they violate those rules. In the simplest case, the system receives the money by deducting it from the offender's credit balance and adding it to the system's credit balance. It is therefore obvious that the system receives the entire penalty and can use it for other purposes. If the adversary's credit balance becomes negative through deduction and is not recharged within a certain period of time, the operator receives the penalty in the form of an invoice for contractual penalty to the user.
@@ -39,7 +44,7 @@ The ability of fraud punishment is based on the ability of fraud detection. If a
 \section{Fraud Prevention}
 The system achieves fraud prevention through two methods. On the one hand, adversaries are deterred and on the other hand, fraud is uncovered and adversaries are thus eliminated.
 
-adversaries are deterred by the public rating system and the well-known possibility of reporting. Anyone who intends to cheat considers twice whether they want to accept the resulting disadvantages, such as a poor rating or exclusion from the system. In addition, there is the fine you have to pay if you are discovered to be a adversary. Since these fines are invariably higher than the cost of using the system properly, fraud is not profitable.
+Adversaries are deterred by the public rating system and the well-known possibility of reporting. Anyone who intends to cheat considers twice whether they want to accept the resulting disadvantages, such as a poor rating or exclusion from the system. In addition, there is the fine you have to pay if you are discovered to be a adversary. Since these fines are invariably higher than the cost of using the system properly, fraud is not profitable.
 
 As explained in the paragraph 'Fraud Dedection', adversaries are discovered at the latest in the long run. On one hand, all other users notice from the adversary's rating that there is something wrong. The adversary is thus eliminated by the fact that nobody wants to book a parking space of his any more and he will no longer be able to book a parking space from users with manual confirmation, because most users only conclude contracts with users from whom they assume that everything will go as planned, i.e. users with a good rating. On the other hand, adversaries are eliminated because they are excluded by the system. Anyone who has been discovered too often as a adversary or whose reputation score falls below a certain threshold will be banned.
 

@@ -20,10 +20,12 @@
         <activity
             android:name=".activities.BaseActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.main.MainActivity"
             android:label="Pasha"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activities.BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,26 +36,32 @@
         <activity
             android:name=".activities.contracts.ContractsActivity"
             android:label="@string/activity_text_contracts"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activities.BaseActivity" />
         <activity
             android:name=".activities.parkingoffer.OffersActivity"
             android:label="@string/activity_text_offers"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activities.BaseActivity" />
         <activity
             android:name=".activities.profile.ProfileActivity"
             android:label="@string/activity_text_profile"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activities.BaseActivity" />
         <activity
             android:name=".activities.report.ReportActivity"
             android:label="@string/activity_text_report"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activities.BaseActivity" />
         <activity
             android:name=".activities.search.SearchActivity"
             android:label="@string/activity_text_search"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activities.BaseActivity" />
         <activity
             android:name=".activities.parkingspots.SpotsActivity"
             android:label="@string/activity_text_spots"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activities.BaseActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

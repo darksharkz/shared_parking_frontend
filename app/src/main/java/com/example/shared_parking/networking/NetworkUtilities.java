@@ -51,139 +51,69 @@ final public class NetworkUtilities {
     private NetworkUtilities() {
     }
 
-    public static void register(String mail, String firstname, String lastname, String password, Context context, final ServerCallback serverCallback){
+    public static void makeRequest(final String httpUri, HashMap<String, Object> params, Context context, final ServerCallback serverCallback){
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, httpUri, new JSONObject(params), new Response.Listener<JSONObject>() {
 
-        HashMap<String, String> params = new HashMap<String, String>();
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e(TAG, "JSON Response:" + response);
+                        serverCallback.onSuccess(response);
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error with volley while " + httpUri + ":" + error);
+                        serverCallback.onFailure(error);
+                    }
+                });
+
+        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+    }
+
+    public static void register(String mail, String firstname, String lastname, String password, Context context, final ServerCallback serverCallback){
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("mail", mail);
         params.put("firstname", firstname);
         params.put("lastname", lastname);
         params.put("password", password);
-        //String url = REGISTER_URI + "?name=" + lastName + "&username=" + mail + "&password=" + password;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, REGISTER_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while registering" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(REGISTER_URI, params, context, serverCallback);
     }
 
     public static void login(String mail, String password, Context context, final ServerCallback serverCallback){
-
-        HashMap<String, String> params = new HashMap<String, String>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("mail", mail);
         params.put("password", password);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, LOGIN_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while registering" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(LOGIN_URI, params, context, serverCallback);
     }
 
     public static void getParkingSpacebyUser(String auth_token, Context context, final ServerCallback serverCallback){
-
-        HashMap<String, String> params = new HashMap<String, String>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
-        //String url = REGISTER_URI + "?name=" + lastName + "&username=" + mail + "&password=" + password;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, GET_PARKINGSPACE_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while registering" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(GET_PARKINGSPACE_URI, params, context, serverCallback);
     }
 
     public static void getParkingOffersbyUser(String auth_token, Context context, final ServerCallback serverCallback){
-        HashMap<String, String> params = new HashMap<String, String>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, GET_PARKINGOFFERBYUSER_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while registering" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(GET_PARKINGOFFERBYUSER_URI, params, context, serverCallback);
     }
 
     public static void getParkingOffersbyTime(String auth_token, String start_dt, String end_dt, Context context, final ServerCallback serverCallback){
-        HashMap<String, String> params = new HashMap<String, String>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
         params.put("start_dt", start_dt);
         params.put("end_dt", end_dt);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, GET_PARKINGOFFERBYTIME_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while registering" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(GET_PARKINGOFFERBYTIME_URI, params, context, serverCallback);
     }
 
     public static void createParkingSpace(String auth_token, String city, String street, int postcode, int number, double lat, double lng, Context context, final ServerCallback serverCallback){
-
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
         params.put("city", city);
@@ -193,26 +123,8 @@ final public class NetworkUtilities {
         params.put("lat", lat);
         params.put("lng", lng);
         Log.e(TAG, "JSON Response:" + new JSONObject(params));
-        //String url = REGISTER_URI + "?name=" + lastName + "&username=" + mail + "&password=" + password;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, CREATE_PARKINGSPACE_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while registering" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(CREATE_PARKINGSPACE_URI, params, context, serverCallback);
     }
 
     public static void createParkingOffer(String auth_token, int parkingspaceid, int price, String start_dt, String end_dt, Context context, final ServerCallback serverCallback){
@@ -223,24 +135,7 @@ final public class NetworkUtilities {
         params.put("start_dt", start_dt);
         params.put("end_dt", end_dt);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, CREATE_PARKINGOFFER_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while registering" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(CREATE_PARKINGOFFER_URI, params, context, serverCallback);
     }
 
     public static void createParkingTrade(String auth_token, int parkingspaceid, int price, String start_dt, String end_dt, int userid, Context context, final ServerCallback serverCallback){
@@ -252,24 +147,7 @@ final public class NetworkUtilities {
         params.put("end_dt", end_dt);
         params.put("userid", userid);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, CREATE_PARKINGTRADE_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while creating parkingtrade" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(CREATE_PARKINGTRADE_URI, params, context, serverCallback);
     }
 
     public static void editParkingSpace(int ID, String auth_token, String city, String street, int postcode, int number, double lat, double lng, Context context, final ServerCallback serverCallback){
@@ -284,26 +162,8 @@ final public class NetworkUtilities {
         params.put("lat", lat);
         params.put("lng", lng);
         Log.e(TAG, "JSON Response:" + new JSONObject(params));
-        //String url = REGISTER_URI + "?name=" + lastName + "&username=" + mail + "&password=" + password;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, EDIT_PARKINGSPACE_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while editing parkingspace" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(EDIT_PARKINGSPACE_URI, params, context, serverCallback);
     }
 
     public static void editParkingOffer(int ID, String auth_token, int parkingspaceid, int price, String start_dt, String end_dt, Context context, final ServerCallback serverCallback){
@@ -316,52 +176,16 @@ final public class NetworkUtilities {
         params.put("end_dt", end_dt);
         Log.e(TAG, "JSON request:" + params);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, EDIT_PARKINGOFFER_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while editing parkingspace" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(EDIT_PARKINGOFFER_URI, params, context, serverCallback);
     }
 
     public static void deleteParkingSpace(int ID, String auth_token, Context context, final ServerCallback serverCallback){
-
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("ID", ID);
         params.put("auth_token", auth_token);
         Log.e(TAG, "JSON Response:" + new JSONObject(params));
-        //String url = REGISTER_URI + "?name=" + lastName + "&username=" + mail + "&password=" + password;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, DELETE_PARKINGSPACE_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while deleting parkingspace" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(DELETE_PARKINGSPACE_URI, params, context, serverCallback);
     }
 
     public static void deleteParkingOffer(int ID, String auth_token, Context context, final ServerCallback serverCallback){
@@ -369,173 +193,50 @@ final public class NetworkUtilities {
         params.put("ID", ID);
         params.put("auth_token", auth_token);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, DELETE_PARKINGOFFER_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while deleting parkingspace" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(DELETE_PARKINGOFFER_URI, params, context, serverCallback);
     }
 
     public static void getUser(String auth_token, Context context, final ServerCallback serverCallback){
-
-        HashMap<String, String> params = new HashMap<String, String>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, GET_USER_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while getting user" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(GET_USER_URI, params, context, serverCallback);
     }
 
     public static void setBalance(int userid, int change, Context context, final ServerCallback serverCallback){
-
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("userid", userid);
         params.put("change", change);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, SET_BALANCE_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while getting user" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(SET_BALANCE_URI, params, context, serverCallback);
     }
 
     public static void getParkingTradesAsLandlord(String auth_token, Context context, final ServerCallback serverCallback){
-        HashMap<String, String> params = new HashMap<String, String>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, GET_PARKINGTRADESASLANDLORD_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while registering" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(GET_PARKINGTRADESASLANDLORD_URI, params, context, serverCallback);
     }
 
     public static void getParkingTradesAsTenant(String auth_token, Context context, final ServerCallback serverCallback){
-        HashMap<String, String> params = new HashMap<String, String>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, GET_PARKINGTRADESASTENANT_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while registering" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(GET_PARKINGTRADESASTENANT_URI, params, context, serverCallback);
     }
 
     public static void getCar(String auth_token, Context context, final ServerCallback serverCallback){
-
-        HashMap<String, String> params = new HashMap<String, String>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, GET_CAR_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while getting user" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(GET_CAR_URI, params, context, serverCallback);
     }
 
     public static void getCarActive(String auth_token, Context context, final ServerCallback serverCallback){
-
-        HashMap<String, String> params = new HashMap<String, String>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, GET_CARACTIVE_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while getting user" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(GET_CARACTIVE_URI, params, context, serverCallback);
     }
 
     public static void deleteCar(int ID, String auth_token, Context context, final ServerCallback serverCallback){
@@ -543,78 +244,24 @@ final public class NetworkUtilities {
         params.put("ID", ID);
         params.put("auth_token", auth_token);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, DELETE_CAR_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while deleting parkingspace" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(DELETE_CAR_URI, params, context, serverCallback);
     }
 
     public static void editCar(int ID, String auth_token, String licenseplate, Context context, final ServerCallback serverCallback){
-        Log.e(TAG, "Beginn von edit car");
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("ID", ID);
         params.put("auth_token", auth_token);
         params.put("licenseplate", licenseplate);
-        Log.e(TAG, "JSON Request:" + new JSONObject(params));
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, EDIT_CAR_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while editing parkingspace" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(EDIT_CAR_URI, params, context, serverCallback);
     }
 
     public static void createCar(String auth_token, String licenseplate, Context context, final ServerCallback serverCallback){
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("auth_token", auth_token);
         params.put("licenseplate", licenseplate);
-        Log.e(TAG, "JSON Request:" + new JSONObject(params));
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, CREATE_CAR_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "JSON Response:" + response);
-                        serverCallback.onSuccess(response);
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Error with volley while creating parkingtrade" + error);
-                        serverCallback.onFailure(error);
-                    }
-                });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        makeRequest(CREATE_CAR_URI, params, context, serverCallback);
     }
 
 }

@@ -18,13 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".BaseActivity"
+            android:name=".activities.BaseActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.main.MainActivity"
             android:label="Pasha"
-            android:parentActivityName=".BaseActivity">
+            android:parentActivityName=".activities.BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,29 +32,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ContractsActivity"
+            android:name=".activities.contracts.ContractsActivity"
             android:label="@string/activity_text_contracts"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".activities.BaseActivity" />
         <activity
             android:name=".activities.parkingoffer.OffersActivity"
             android:label="@string/activity_text_offers"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".activities.BaseActivity" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".activities.profile.ProfileActivity"
             android:label="@string/activity_text_profile"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".activities.BaseActivity" />
         <activity
-            android:name=".ReportActivity"
+            android:name=".activities.report.ReportActivity"
             android:label="@string/activity_text_report"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".activities.BaseActivity" />
         <activity
             android:name=".activities.search.SearchActivity"
             android:label="@string/activity_text_search"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".activities.BaseActivity" />
         <activity
             android:name=".activities.parkingspots.SpotsActivity"
             android:label="@string/activity_text_spots"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".activities.BaseActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

@@ -78,11 +78,11 @@ class SpotsAdapter extends RecyclerView.Adapter<SpotsAdapter.ViewHolder> {
         public ViewHolder(View view) {
             super(view);
             Log.e(TAG, "create ViewHolder");
-            postCode = (TextView) view.findViewById(R.id.list_offers_parkingspaceid_text);
+            postCode = (TextView) view.findViewById(R.id.list_spots_parkingspaceid_text);
             city = (TextView) view.findViewById(R.id.list_spots_city);
-            street = (TextView) view.findViewById(R.id.list_offers_startdt_text);
+            street = (TextView) view.findViewById(R.id.list_spots_startdt_text);
             number = (TextView) view.findViewById(R.id.list_spots_number);
-            lat = (TextView) view.findViewById(R.id.list_offers_enddt);
+            lat = (TextView) view.findViewById(R.id.list_spots_enddt);
             lng = (TextView) view.findViewById(R.id.list_spots_lng);
             edit = (ImageButton) view.findViewById(R.id.ib_spots_edit);
             delete = (ImageButton) view.findViewById(R.id.ib_spots_delete);

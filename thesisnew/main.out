@@ -1,0 +1,38 @@
+\BOOKMARK [0][]{Contents.0}{Contents}{}% 1
+\BOOKMARK [0][]{chapter.1}{1 Introduction}{}% 2
+\BOOKMARK [0][]{chapter.2}{2 Related Work and Background}{}% 3
+\BOOKMARK [1][-]{section.2.1}{2.1 Overview}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.2}{2.2 Intelligent Parking Systems}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.3}{2.3 Shared Parking}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.4}{2.4 Trust Systems}{chapter.2}% 7
+\BOOKMARK [0][]{chapter.3}{3 System Model and Requirements}{}% 8
+\BOOKMARK [1][-]{section.3.1}{3.1 High-level Overview}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.2}{3.2 System Model}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.3}{3.3 Functional Requirements}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.4}{3.4 Adversary Model and Assumptions}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.5}{3.5 Adversary Model and Classes of Fraud}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.6}{3.6 Assumptions}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.7}{3.7 Security Requirements}{chapter.3}% 15
+\BOOKMARK [0][]{chapter.4}{4 Design}{}% 16
+\BOOKMARK [1][-]{section.4.1}{4.1 Functional features}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.2}{4.2 Security features}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Rating Module}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Reporting Module}{section.4.2}% 20
+\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 Verification Module}{section.4.2}% 21
+\BOOKMARK [2][-]{subsection.4.2.4}{4.2.4 Reputation Module}{section.4.2}% 22
+\BOOKMARK [2][-]{subsection.4.2.5}{4.2.5 Sanctioning and Compensation}{section.4.2}% 23
+\BOOKMARK [2][-]{subsection.4.2.6}{4.2.6 Example}{section.4.2}% 24
+\BOOKMARK [0][]{chapter.5}{5 Security Analysis}{}% 25
+\BOOKMARK [1][-]{section.5.1}{5.1 Fraud Detection}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.2}{5.2 Fraud Punishment}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.3}{5.3 Fraud Prevention}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.4}{5.4 Fraud Compensation}{chapter.5}% 29
+\BOOKMARK [0][]{chapter.6}{6 Implementation}{}% 30
+\BOOKMARK [1][-]{section.6.1}{6.1 Database}{chapter.6}% 31
+\BOOKMARK [1][-]{section.6.2}{6.2 Java Web Service}{chapter.6}% 32
+\BOOKMARK [1][-]{section.6.3}{6.3 Java Android App}{chapter.6}% 33
+\BOOKMARK [1][-]{section.6.4}{6.4 Comments on the realization of the SPS}{chapter.6}% 34
+\BOOKMARK [0][]{chapter.7}{7 Future Work}{}% 35
+\BOOKMARK [0][]{chapter.8}{8 Conclusion}{}% 36
+\BOOKMARK [0][]{chapter.9}{9 Acknowledgments}{}% 37
+\BOOKMARK [0][]{section*.52}{Bibliography}{}% 38

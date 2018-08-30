@@ -1,6 +1,7 @@
 package com.example.shared_parking.activities.search;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -11,15 +12,14 @@ import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
-import com.example.shared_parking.BaseActivity;
+import com.example.shared_parking.activities.BaseActivity;
 import com.example.shared_parking.R;
-import com.example.shared_parking.activities.main.MainActivity;
+import com.example.shared_parking.activities.profile.ProfileActivity;
 import com.example.shared_parking.networking.NetworkUtilities;
 import com.example.shared_parking.networking.ServerCallback;
-import com.example.shared_parking.roomdatabase.AppDatabase;
-import com.example.shared_parking.roomdatabase.ParkingSpace;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -34,7 +34,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
@@ -48,6 +47,28 @@ public class SearchActivity extends BaseActivity implements OnMapReadyCallback, 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Open profile if no car is active
+        SharedPreferences sharedPref = this.getSharedPreferences("key", Context.MODE_PRIVATE);
+        NetworkUtilities.getCarActive(sharedPref.getString("auth_token", "default"), this, new ServerCallback() {
+            @Override
+            public void onSuccess(JSONObject result) {
+                try {
+                    if(result.getJSONArray("result").length() != 1){
+                        Toast.makeText(getApplicationContext(), "Please choose exactly 1 car as active!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                        startActivity(intent);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(VolleyError volleyError) {
+                Log.e(TAG, "Error with volley while create parkingoffer" + volleyError);
+            }
+        });
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

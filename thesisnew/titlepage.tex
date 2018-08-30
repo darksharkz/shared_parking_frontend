@@ -1,0 +1,83 @@
+%% titlepage.tex
+%%
+
+% coordinates for the bg shape on the titlepage
+\newcommand{\diameter}{20}
+\newcommand{\xone}{-15}
+\newcommand{\xtwo}{160}
+\newcommand{\yone}{15}
+\newcommand{\ytwo}{-253}
+
+\begin{titlepage}
+% bg shape
+\begin{tikzpicture}[overlay]
+\draw[color=gray]  
+ 		 (\xone mm, \yone mm)
+  -- (\xtwo mm + \diameter pt , \yone mm)
+  -- (\xtwo mm + \diameter pt , \ytwo mm) 
+	-- (\xone mm , \ytwo mm)
+	-- (\xone mm, \yone mm);
+\end{tikzpicture}
+	\begin{textblock}{10}[0,0](4,2.5)
+		\includegraphics[width=.3\textwidth]{logos/unilogo4cohne_mittel.jpg}
+	\end{textblock}
+	\changefont{phv}{m}{n}	% helvetica	
+	\vspace*{3cm}
+	\begin{center}
+		\Huge{\mytitle}
+		\vspace*{2cm}\\
+		\Large{
+			\iflanguage{english}{Bachelor Thesis of}			
+												  {Masterarbeit\\von}
+		}\\
+		\vspace*{1cm}
+		\huge{\myname}\\
+		\vspace*{1cm}
+		\Large{
+			\iflanguage{english}{At the Department of Computer Science}			
+													{Am Institut f\"ur Informatik}
+			\\
+			\myinstitute
+		}
+    
+	\end{center}
+	\vspace*{.2cm}
+	\begin{center}
+	\includegraphics[width=.3\textwidth]{logos/seal.eps}
+	\end{center}
+\Large{
+\begin{center}
+\vspace{.5cm}
+\begin{tabular}[ht]{l c l}
+  % Gutachter sind die Professoren, die die Arbeit bewerten. 
+  %\iflanguage{english}{Reviewer}{Gutachter}: & \hfill  & \reviewerone\\
+  %\iflanguage{english}{Second reviewer}{Zweitgutachter}: & \hfill  & \reviewertwo\\
+  \iflanguage{english}{Advisor}{Betreuender Mitarbeiter}: & \hfill  & \advisor\\
+  %\iflanguage{english}{Second advisor}{Zweiter betreuender Mitarbeiter}: & \hfill  & \advisortwo\\
+  % Der zweite betreuende Mitarbeiter kann weggelassen werden. 
+\end{tabular}
+\end{center}
+}
+
+
+%\vspace{2cm}
+%\begin{center}
+%\large{\iflanguage{english}{Duration}{Bearbeitungszeit}: \timestart \hspace*{0.25cm} -- %\hspace*{0.25cm} \timeend}
+%\end{center}
+
+
+\begin{textblock}{10}[0,0](3.2,16.75)
+\small{ 
+	\iflanguage{english}
+		{Julius-Maximilians-Universit\"at W\"urzburg}
+		{Julius-Maximilians-University, W\"urzburg}
+}
+\end{textblock}
+
+\begin{textblock}{10}[0,0](13.2,16.75)
+\large{
+	\textbf{www.uni-wuerzburg.de} 
+}
+\end{textblock}
+
+\end{titlepage}

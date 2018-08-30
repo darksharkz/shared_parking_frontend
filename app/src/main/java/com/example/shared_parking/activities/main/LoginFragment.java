@@ -1,6 +1,7 @@
 package com.example.shared_parking.activities.main;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.example.shared_parking.activities.profile.ProfileActivity;
 import com.example.shared_parking.R;
 import com.example.shared_parking.networking.NetworkUtilities;
 import com.example.shared_parking.networking.ServerCallback;
@@ -60,13 +62,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                                     e.printStackTrace();
                                 }
                                 editor.commit();
-                                Toast toast = Toast.makeText(getContext(), sharedPref.getString("auth_token", "default"), Toast.LENGTH_LONG);
-                                toast.show();
+                                Toast.makeText(getContext(), "You've logged in succesfully!", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(getContext(), ProfileActivity.class);
+                                startActivity(intent);
                             }
 
                             @Override
                             public void onFailure(VolleyError error) {
-                                Toast toast = Toast.makeText(getContext(), "Fataler Fehler", Toast.LENGTH_LONG);
+                                Toast toast = Toast.makeText(getContext(), "Network Error! Please check your connection!", Toast.LENGTH_LONG);
                                 toast.show();
                             }
                         });

@@ -75,7 +75,7 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.ViewHolder
             parkingspaceid = (TextView) view.findViewById(R.id.list_offers_parkingspaceid);
             price = (TextView) view.findViewById(R.id.list_offers_price);
             start_dt = (TextView) view.findViewById(R.id.list_offers_startdt);
-            end_dt = (TextView) view.findViewById(R.id.list_offers_enddt);
+            end_dt = (TextView) view.findViewById(R.id.list_spots_enddt);
             edit = (ImageButton) view.findViewById(R.id.ib_offers_edit);
             delete = (ImageButton) view.findViewById(R.id.ib_offers_delete);
 

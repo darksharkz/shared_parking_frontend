@@ -1,4 +1,4 @@
-package com.example.shared_parking;
+package com.example.shared_parking.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,11 +15,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.example.shared_parking.R;
+import com.example.shared_parking.activities.report.ReportActivity;
+import com.example.shared_parking.activities.contracts.ContractsActivity;
 import com.example.shared_parking.activities.main.MainActivity;
 import com.example.shared_parking.activities.parkingoffer.OffersActivity;
 import com.example.shared_parking.activities.parkingspots.SpotsActivity;
+import com.example.shared_parking.activities.profile.ProfileActivity;
 import com.example.shared_parking.activities.search.SearchActivity;
 import com.example.shared_parking.networking.NetworkUtilities;
 import com.example.shared_parking.networking.ServerCallback;
@@ -124,7 +129,12 @@ public class BaseActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
-        if (id == R.id.nav_overview) {
+        SharedPreferences sharedPref = this.getSharedPreferences("key", Context.MODE_PRIVATE);
+        if(sharedPref.getString("auth_token", "default").equals("default")){
+            Toast.makeText(this, "Please log in or register first!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_overview) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_contracts) {
@@ -147,9 +157,8 @@ public class BaseActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.nav_logout) {
             // Delete auth_token
-            SharedPreferences sharedPref = this.getSharedPreferences("key", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putString("auth_token", "");
+            editor.putString("auth_token", "default");
             editor.commit();
             // Open log in screen
             Intent intent = new Intent(this, MainActivity.class);

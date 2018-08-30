@@ -1,6 +1,6 @@
 \BOOKMARK [1][-]{section.1}{Abstract}{}% 1
 \BOOKMARK [1][-]{section.2}{Indrodution}{}% 2
-\BOOKMARK [1][-]{section.3}{Related Work}{}% 3
+\BOOKMARK [1][-]{section.3}{Related Work and Background}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{Overview}{section.3}% 4
 \BOOKMARK [2][-]{subsection.3.2}{Intelligent Parking Systems}{section.3}% 5
 \BOOKMARK [2][-]{subsection.3.3}{Shared Parking}{section.3}% 6
@@ -28,6 +28,10 @@
 \BOOKMARK [2][-]{subsection.6.3}{Fraud Prevention}{section.6}% 28
 \BOOKMARK [2][-]{subsection.6.4}{Fraud Compensation}{section.6}% 29
 \BOOKMARK [1][-]{section.7}{Implementation}{}% 30
-\BOOKMARK [1][-]{section.8}{Future Work}{}% 31
-\BOOKMARK [1][-]{section.9}{Conclusion}{}% 32
-\BOOKMARK [1][-]{section.10}{Acknowledgments}{}% 33
+\BOOKMARK [2][-]{subsection.7.1}{Database}{section.7}% 31
+\BOOKMARK [2][-]{subsection.7.2}{Java Web Service}{section.7}% 32
+\BOOKMARK [2][-]{subsection.7.3}{Java Android App}{section.7}% 33
+\BOOKMARK [2][-]{subsection.7.4}{Comments on the realization of the SPS}{section.7}% 34
+\BOOKMARK [1][-]{section.8}{Future Work}{}% 35
+\BOOKMARK [1][-]{section.9}{Conclusion}{}% 36
+\BOOKMARK [1][-]{section.10}{Acknowledgments}{}% 37

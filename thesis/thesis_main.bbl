@@ -1,5 +1,16 @@
 \begin{thebibliography}{10}
 
+\bibitem{avoine2005gracefully}
+Gildas Avoine, Felix G{\"a}rtner, Rachid Guerraoui, and Marko Vukoli{\'c}.
+\newblock Gracefully degrading fair exchange with security modules.
+\newblock In {\em European Dependable Computing Conference}, pages 55--71.
+  Springer, 2005.
+
+\bibitem{benenson2004secure}
+Zinaida Benenson, Felix~C G{\"a}rtner, and Dogan Kesdogan.
+\newblock {\em Secure Multi-Party Computation with Security Modules.}
+\newblock RWTH, Department of Computer Science, 2004.
+
 \bibitem{itdp2014shared}
 Institute for Transportation and Development Policy.
 \newblock What is shared parking?
@@ -44,6 +55,13 @@ Hayam Mousa, Sonia~Ben Mokhtar, Omar Hasan, Osama Younes, Mohiy Hadhoud, and
 \newblock Trust management and reputation systems in mobile participatory
   sensing applications: A survey.
 \newblock {\em Computer Networks}, 90:49--73, 2015.
+
+\bibitem{nojoumian2014efficient}
+Mehrdad Nojoumian and Douglas~R Stinson.
+\newblock Efficient sealed-bid auction protocols using verifiable secret
+  sharing.
+\newblock In {\em International Conference on Information Security Practice and
+  Experience}, pages 302--317. Springer, 2014.
 
 \bibitem{shaheen2005smart}
 Susan Shaheen.

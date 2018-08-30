@@ -17,26 +17,14 @@ import java.util.HashMap;
  * Provides utility methods for communicating with the server.
  */
 final public class NetworkUtilities {
-    /** The tag used to log to adb console. */
-    private static final String TAG = "NetworkUtilities";
-    /** POST parameter name for the user's account name */
-    public static final String PARAM_USERNAME = "username";
-    /** POST parameter name for the user's password */
-    public static final String PARAM_PASSWORD = "password";
-    /** POST parameter name for the user's authentication token */
-    public static final String PARAM_AUTH_TOKEN = "authtoken";
-    /** POST parameter name for the client's last-known sync state */
-    public static final String PARAM_SYNC_STATE = "syncstate";
-    /** POST parameter name for the sending client-edited contact info */
-    public static final String PARAM_CONTACTS_DATA = "contacts";
-    /** Timeout (in ms) we specify for each http request */
-    public static final int HTTP_REQUEST_TIMEOUT_MS = 30 * 1000;
     /** Base URL for the Shared Parking REST API Service */
     public static final String BASE_URL = "http://betreffilada.de:777/shared_parking";
+
     /** URI for signup service */
-    public static final String REGISTER_URI = BASE_URL + "/register/doregister";
+    public static final String REGISTER_URI = BASE_URL + "/user/register";
     /** URI for login service */
-    public static final String LOGIN_URI = BASE_URL + "/login/dologin";
+    public static final String LOGIN_URI = BASE_URL + "/user/login";
+    /** URI for all other services */
     public static final String GET_PARKINGSPACE_URI = BASE_URL + "/parkingspace/getbyuser";
     public static final String CREATE_PARKINGSPACE_URI = BASE_URL + "/parkingspace/create";
     public static final String EDIT_PARKINGSPACE_URI = BASE_URL + "/parkingspace/edit";
@@ -49,6 +37,16 @@ final public class NetworkUtilities {
     public static final String EDIT_PARKINGOFFER_URI = BASE_URL + "/parkingoffer/edit";
     public static final String DELETE_PARKINGOFFER_URI = BASE_URL + "/parkingoffer/delete";
     public static final String CREATE_PARKINGTRADE_URI = BASE_URL + "/parkingtrade/create";
+    public static final String GET_PARKINGTRADESASLANDLORD_URI = BASE_URL + "/parkingtrade/getbyuseraslandlord";
+    public static final String GET_PARKINGTRADESASTENANT_URI = BASE_URL + "/parkingtrade/getbyuserastenant";
+    public static final String GET_CAR_URI = BASE_URL + "/car/getbyuser";
+    public static final String GET_CARACTIVE_URI = BASE_URL + "/car/getactivebyuser";
+    public static final String CREATE_CAR_URI = BASE_URL + "/car/create";
+    public static final String EDIT_CAR_URI = BASE_URL + "/car/edit";
+    public static final String DELETE_CAR_URI = BASE_URL + "/car/delete";
+
+    /** The tag used to log to adb console. */
+    private static final String TAG = "NetworkUtilities";
 
     private NetworkUtilities() {
     }
@@ -435,6 +433,183 @@ final public class NetworkUtilities {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e(TAG, "Error with volley while getting user" + error);
+                        serverCallback.onFailure(error);
+                    }
+                });
+
+        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+    }
+
+    public static void getParkingTradesAsLandlord(String auth_token, Context context, final ServerCallback serverCallback){
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("auth_token", auth_token);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, GET_PARKINGTRADESASLANDLORD_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e(TAG, "JSON Response:" + response);
+                        serverCallback.onSuccess(response);
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error with volley while registering" + error);
+                        serverCallback.onFailure(error);
+                    }
+                });
+
+        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+    }
+
+    public static void getParkingTradesAsTenant(String auth_token, Context context, final ServerCallback serverCallback){
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("auth_token", auth_token);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, GET_PARKINGTRADESASTENANT_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e(TAG, "JSON Response:" + response);
+                        serverCallback.onSuccess(response);
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error with volley while registering" + error);
+                        serverCallback.onFailure(error);
+                    }
+                });
+
+        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+    }
+
+    public static void getCar(String auth_token, Context context, final ServerCallback serverCallback){
+
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("auth_token", auth_token);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, GET_CAR_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e(TAG, "JSON Response:" + response);
+                        serverCallback.onSuccess(response);
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error with volley while getting user" + error);
+                        serverCallback.onFailure(error);
+                    }
+                });
+
+        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+    }
+
+    public static void getCarActive(String auth_token, Context context, final ServerCallback serverCallback){
+
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("auth_token", auth_token);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, GET_CARACTIVE_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e(TAG, "JSON Response:" + response);
+                        serverCallback.onSuccess(response);
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error with volley while getting user" + error);
+                        serverCallback.onFailure(error);
+                    }
+                });
+
+        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+    }
+
+    public static void deleteCar(int ID, String auth_token, Context context, final ServerCallback serverCallback){
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("ID", ID);
+        params.put("auth_token", auth_token);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, DELETE_CAR_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e(TAG, "JSON Response:" + response);
+                        serverCallback.onSuccess(response);
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error with volley while deleting parkingspace" + error);
+                        serverCallback.onFailure(error);
+                    }
+                });
+
+        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+    }
+
+    public static void editCar(int ID, String auth_token, String licenseplate, Context context, final ServerCallback serverCallback){
+        Log.e(TAG, "Beginn von edit car");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("ID", ID);
+        params.put("auth_token", auth_token);
+        params.put("licenseplate", licenseplate);
+        Log.e(TAG, "JSON Request:" + new JSONObject(params));
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, EDIT_CAR_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e(TAG, "JSON Response:" + response);
+                        serverCallback.onSuccess(response);
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error with volley while editing parkingspace" + error);
+                        serverCallback.onFailure(error);
+                    }
+                });
+
+        VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+    }
+
+    public static void createCar(String auth_token, String licenseplate, Context context, final ServerCallback serverCallback){
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("auth_token", auth_token);
+        params.put("licenseplate", licenseplate);
+        Log.e(TAG, "JSON Request:" + new JSONObject(params));
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, CREATE_CAR_URI, new JSONObject(params), new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e(TAG, "JSON Response:" + response);
+                        serverCallback.onSuccess(response);
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error with volley while creating parkingtrade" + error);
                         serverCallback.onFailure(error);
                     }
                 });

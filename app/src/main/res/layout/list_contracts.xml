@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="vertical">
+
+    <TextView android:id="@+id/list_contracts_partnerid_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="Contractual Partner:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"/>
+
+    <TextView android:id="@+id/list_contracts_partnerid"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/list_contracts_partnerid_text"
+        android:layout_toEndOf="@id/list_contracts_partnerid_text"
+        android:layout_margin="4dp"/>
+
+    <TextView android:id="@+id/list_contracts_postcode"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_partnerid_text"
+        android:layout_margin="4dp"/>
+
+    <TextView android:id="@+id/list_contracts_city"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/list_contracts_postcode"
+        android:layout_toEndOf="@id/list_contracts_postcode"
+        android:layout_below="@id/list_contracts_partnerid_text"
+        android:layout_margin="4dp"/>
+
+    <TextView android:id="@+id/list_contracts_street"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_postcode"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"/>
+
+    <TextView android:id="@+id/list_contracts_number"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/list_contracts_street"
+        android:layout_toEndOf="@id/list_contracts_street"
+        android:layout_below="@id/list_contracts_postcode"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"/>
+
+    <TextView android:id="@+id/list_contracts_lat_text"
+        android:textSize="12sp"
+        android:text="Lat:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_street"
+        android:layout_margin="4dp"/>
+
+    <TextView android:id="@+id/list_contracts_lat"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_street"
+        android:layout_toRightOf="@id/list_contracts_lat_text"
+        android:layout_toEndOf="@id/list_contracts_lat_text"
+        android:layout_margin="4dp"/>
+
+    <TextView android:id="@+id/list_contracts_lng_text"
+        android:textSize="12sp"
+        android:text="Lng:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_street"
+        android:layout_toRightOf="@id/list_contracts_lat"
+        android:layout_toEndOf="@id/list_contracts_lat"
+        android:layout_margin="4dp"/>
+
+    <TextView android:id="@+id/list_contracts_lng"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_street"
+        android:layout_toRightOf="@id/list_contracts_lng_text"
+        android:layout_toEndOf="@id/list_contracts_lng_text"
+        android:layout_margin="4dp"/>
+
+    <TextView
+        android:id="@+id/list_contracts_startdt_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_lat_text"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:text="Start:"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/list_contracts_startdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_lat_text"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_toEndOf="@id/list_contracts_startdt_text"
+        android:layout_toRightOf="@id/list_contracts_startdt_text"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/list_contracts_enddt_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_startdt_text"
+        android:layout_margin="4dp"
+        android:text="End:"
+        android:textSize="14sp" />
+
+    <TextView android:id="@+id/list_contracts_enddt"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_contracts_startdt_text"
+        android:layout_toRightOf="@id/list_contracts_enddt_text"
+        android:layout_toEndOf="@id/list_contracts_enddt_text"
+        android:layout_margin="4dp"/>
+
+    <TextView
+        android:id="@+id/list_contracts_price_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_below="@id/list_contracts_enddt_text"
+        android:text="Price/h:"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/list_contracts_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_toEndOf="@id/list_contracts_price_text"
+        android:layout_toRightOf="@id/list_contracts_price_text"
+        android:layout_below="@id/list_contracts_enddt_text"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <ImageButton
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/ib_contracts_ratextend"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="4dp"
+        app:srcCompat="@drawable/ic_delete" />
+
+</RelativeLayout>

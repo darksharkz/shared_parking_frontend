@@ -6,7 +6,7 @@
     android:padding="8dp"
     android:orientation="vertical">
 
-    <TextView android:id="@+id/list_offers_parkingspaceid_text"
+    <TextView android:id="@+id/list_spots_parkingspaceid_text"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_width="wrap_content"
@@ -18,15 +18,15 @@
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/list_offers_parkingspaceid_text"
-        android:layout_toEndOf="@id/list_offers_parkingspaceid_text"
+        android:layout_toRightOf="@id/list_spots_parkingspaceid_text"
+        android:layout_toEndOf="@id/list_spots_parkingspaceid_text"
         android:layout_margin="4dp"/>
 
-    <TextView android:id="@+id/list_offers_startdt_text"
+    <TextView android:id="@+id/list_spots_startdt_text"
         android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/list_offers_parkingspaceid_text"
+        android:layout_below="@id/list_spots_parkingspaceid_text"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"/>
 
@@ -34,38 +34,38 @@
         android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/list_offers_startdt_text"
-        android:layout_toEndOf="@id/list_offers_startdt_text"
-        android:layout_below="@id/list_offers_parkingspaceid_text"
+        android:layout_toRightOf="@id/list_spots_startdt_text"
+        android:layout_toEndOf="@id/list_spots_startdt_text"
+        android:layout_below="@id/list_spots_parkingspaceid_text"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"/>
 
-    <TextView android:id="@+id/list_offers_enddt_text"
+    <TextView android:id="@+id/list_spots_enddt_text"
         android:textSize="12sp"
         android:text="Lat:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/list_offers_startdt_text"
+        android:layout_below="@id/list_spots_startdt_text"
         android:layout_margin="4dp"/>
 
-    <TextView android:id="@+id/list_offers_enddt"
+    <TextView android:id="@+id/list_spots_enddt"
         android:textSize="12sp"
         android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/list_offers_startdt_text"
-        android:layout_toRightOf="@id/list_offers_enddt_text"
-        android:layout_toEndOf="@id/list_offers_enddt_text"
+        android:layout_below="@id/list_spots_startdt_text"
+        android:layout_toRightOf="@id/list_spots_enddt_text"
+        android:layout_toEndOf="@id/list_spots_enddt_text"
         android:layout_margin="4dp"/>
 
-    <TextView android:id="@+id/list_offers_price_text"
+    <TextView android:id="@+id/list_spots_price_text"
         android:textSize="12sp"
         android:text="Lng:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/list_offers_startdt_text"
-        android:layout_toRightOf="@id/list_offers_enddt"
-        android:layout_toEndOf="@id/list_offers_enddt"
+        android:layout_below="@id/list_spots_startdt_text"
+        android:layout_toRightOf="@id/list_spots_enddt"
+        android:layout_toEndOf="@id/list_spots_enddt"
         android:layout_margin="4dp"/>
 
     <TextView android:id="@+id/list_spots_lng"
@@ -73,9 +73,9 @@
         android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/list_offers_startdt_text"
-        android:layout_toRightOf="@id/list_offers_price_text"
-        android:layout_toEndOf="@id/list_offers_price_text"
+        android:layout_below="@id/list_spots_startdt_text"
+        android:layout_toRightOf="@id/list_spots_price_text"
+        android:layout_toEndOf="@id/list_spots_price_text"
         android:layout_margin="4dp"/>
 
     <ImageButton

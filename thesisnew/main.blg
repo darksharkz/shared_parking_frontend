@@ -1,0 +1,25 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+A level-1 auxiliary file: titlepage.aux
+A level-1 auxiliary file: declaration.aux
+A level-1 auxiliary file: 00_abstract.aux
+A level-1 auxiliary file: 01_introduction.aux
+A level-1 auxiliary file: 02_related_work_and_background.aux
+A level-1 auxiliary file: 03_system_model_and_requirements.aux
+A level-1 auxiliary file: 04_design.aux
+A level-1 auxiliary file: 05_security_analysis.aux
+A level-1 auxiliary file: 06_implementation.aux
+A level-1 auxiliary file: 07_future_work.aux
+A level-1 auxiliary file: 08_conclusion.aux
+A level-1 auxiliary file: 09_acknowledgements.aux
+The style file: IEEEtranSA.bst
+Database file #1: thesis.bib
+-- IEEEtranSA.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Sorting Alpha version - not for normal IEEE work.
+Warning--empty journal in itdp2014shared
+Warning--empty journal in vtpi2015shared
+Warning--empty journal in shaheen2005smart
+
+Done.
+(There were 3 warnings)

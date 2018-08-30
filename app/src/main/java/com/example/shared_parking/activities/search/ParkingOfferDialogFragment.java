@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
-import com.example.shared_parking.ContractsActivity;
+import com.example.shared_parking.activities.contracts.ContractsActivity;
 import com.example.shared_parking.R;
 import com.example.shared_parking.networking.NetworkUtilities;
 import com.example.shared_parking.networking.ServerCallback;
@@ -86,7 +86,7 @@ public class ParkingOfferDialogFragment extends DialogFragment {
             Parkingspaceid = (TextView) dialogView.findViewById(R.id.list_offers_parkingspaceid);
             Price = (TextView) dialogView.findViewById(R.id.list_offers_price);
             Start_dt = (TextView) dialogView.findViewById(R.id.list_offers_startdt);
-            End_dt = (TextView) dialogView.findViewById(R.id.list_offers_enddt);
+            End_dt = (TextView) dialogView.findViewById(R.id.list_spots_enddt);
             Parkingspaceid.setText(parkingOffer.getString("parkingspaceid"));
             Price.setText(parkingOffer.getString("price"));
             Start_dt.setText(parkingOffer.getString("start_dt"));

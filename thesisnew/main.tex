@@ -1,0 +1,205 @@
+\documentclass{thesisclass}
+% Based on thesisclass.cls of Timo Rohrberg, 2009
+% ----------------------------------------------------------------
+% Thesis - Main document
+% ----------------------------------------------------------------
+
+
+%% -------------------------------
+%% |  Information for PDF file   |
+%% -------------------------------
+\hypersetup{
+ pdfauthor={Not set},
+ pdftitle={Not set},
+ pdfsubject={Not set},
+ pdfkeywords={Not set}
+}
+\usepackage{booktabs} % For formal tables
+\urlstyle{rm}
+
+
+\usepackage{subcaption}
+\captionsetup[subfigure]{list=true, font=normal, labelfont=bf, 
+labelformat=brace, position=top}
+
+\usepackage[inline]{enumitem}
+
+\usepackage{multirow}
+\usepackage[acronym,nomain,toc]{glossaries}
+
+\usepackage{pdflscape}
+\usepackage{afterpage}
+
+\usepackage{cleveref}
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+\usepackage{xargs}
+
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\patchcmd{\@verbatim}
+  {\verbatim@font}
+  {\verbatim@font\fontsize{11}{12}\selectfont}
+  {}{}
+\makeatother
+
+% Acronyms
+
+\makenoidxglossaries
+
+\newacronym{DDL}{DDL}{Data Definition Language}
+
+%% ---------------------------------
+%% | Information about the thesis  |
+%% ---------------------------------
+
+\newcommand{\myname}{Simon Englert}
+\newcommand{\toolAbrev}{Short Name\xspace}
+\newcommand{\toolLong}{Long Name\xspace}
+\newcommand{\mytitle}{Design of a Shared Parking System\\
+											with special attention to security aspects}
+\newcommand{\myinstitute}{Chair for Computer Science II\\
+													Software Engineering\\
+													Secure Software Systems}
+
+\newcommand{\reviewerone}{}
+\newcommand{\reviewertwo}{}
+\newcommand{\advisor}{}
+\newcommand{\advisortwo}{}
+
+\newcommand{\timestart}{22. June. 2018}
+\newcommand{\timeend}{30. August. 2018}
+\newcommand{\submissiontime}{30. August. 2018}
+
+%% ---------------------------------
+%% | ToDo Marker - only for draft! |
+%% ---------------------------------
+% Remove this section for final version!
+\setlength{\marginparwidth}{20mm}
+
+\newcommand{\margtodo}
+{\marginpar{\textbf{\textcolor{red}{ToDo}}}{}}
+
+\newcommandx{\toDo}[2][1=]{\todo[linecolor=green,inline,backgroundcolor=green!25,bordercolor=green,#1]{\textbf{ToDo: }#2}}
+
+%% --------------------------------
+%% | Settings for word separation |
+%% --------------------------------
+% Help for separation:
+% In german package the following hints are additionally available:
+% "- = Additional separation
+% "| = Suppress ligation and possible separation (e.g. Schaf"|fell)
+% "~ = Hyphenation without separation (e.g. bergauf und "~ab)
+% "= = Hyphenation with separation before and after
+% "" = Separation without a hyphenation (e.g. und/""oder)
+
+% Describe separation hints here:
+\hyphenation{
+% Pro-to-koll-in-stan-zen
+}
+
+
+%% ------------------------
+%% |    Including files   |
+%% ------------------------
+% Only files listed here will be included!
+% Userful command for partially translating the document (for bug-fixing e.g.)
+
+
+
+\includeonly{%
+titlepage,
+declaration,
+00_abstract,
+00_abstractgerman,
+01_introduction,
+02_related_work_and_background,
+03_system_model_and_requirements,
+04_design,
+05_security_analysis,
+06_implementation,
+07_future_work,
+08_conclusion,
+09_acknowledgements,
+appendix
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here, main documents begins %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{large}
+% Remove the following line for German text
+\selectlanguage{english}
+
+\frontmatter
+\pagenumbering{roman}
+\include{titlepage}
+\include{declaration}
+\blankpage
+
+%% -------------------
+%% |   Directories   |
+%% -------------------
+\tableofcontents
+\clearpage
+\blankpage
+
+
+
+\blankpage
+
+\include{00_abstract}
+
+\blankpage
+\include{00_abstractgerman}
+
+%% -----------------
+%% |   Main part   |
+%% -----------------
+\mainmatter
+\pagenumbering{arabic}
+\include{01_introduction}
+\include{02_related_work_and_background}
+\include{03_system_model_and_requirements}
+\include{04_design}
+\include{05_security_analysis}
+\include{06_implementation}
+\include{07_future_work}
+\include{08_conclusion}
+\include{09_acknowledgements}
+
+
+%% ----------------
+%% |   Appendix   |
+%% ----------------
+%%\cleardoublepage
+
+%%\printnoidxglossaries
+
+%%\cleardoublepage
+
+%%\input{appendix}
+
+
+%% --------------------
+%% |   Bibliography   |
+%% --------------------
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
+
+%\iflanguage{english}
+%{\bibliographystyle{IEEEtranSA}}	% english style
+%{\bibliographystyle{babalpha-fl}}	% german style
+
+%\bibliographystyle{plainnat}
+												  
+% Use IEEEtran for numeric references
+\bibliographystyle{IEEEtranSA}
+
+\bibliography{thesis}
+
+\end{large}
+\end{document}

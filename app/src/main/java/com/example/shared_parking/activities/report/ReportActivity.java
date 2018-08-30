@@ -1,7 +1,8 @@
-package com.example.shared_parking;
+package com.example.shared_parking.activities.report;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+
+import com.example.shared_parking.activities.BaseActivity;
 
 public class ReportActivity extends BaseActivity {
 
